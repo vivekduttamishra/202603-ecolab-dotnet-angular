@@ -1,0 +1,7 @@
+*.temp
+private/
+*.exe
+*.dll
+debug/
+release/
+obj/
