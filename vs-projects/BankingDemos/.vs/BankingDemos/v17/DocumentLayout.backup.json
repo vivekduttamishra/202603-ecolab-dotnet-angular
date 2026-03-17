@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{63BD101A-7F65-43C6-A98E-F22A4C19F5E1}|BankAccountDemo01\\BankAccountDemo01.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\bankaccountdemo01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63BD101A-7F65-43C6-A98E-F22A4C19F5E1}|BankAccountDemo01\\BankAccountDemo01.csproj|solutionrelative:bankaccountdemo01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\BankAccountDemo01\\Program.cs",
+              "RelativeDocumentMoniker": "BankAccountDemo01\\Program.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\BankAccountDemo01\\Program.cs",
+              "RelativeToolTip": "BankAccountDemo01\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T11:46:11.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
