@@ -1,6 +1,7 @@
 ﻿
 
 using System.Security.Principal;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ConceptArchitect.Finance
 {
@@ -10,7 +11,30 @@ namespace ConceptArchitect.Finance
         private string name;
         private string password;
         private double balance;
+
+
         private double interestRate;
+
+        public double InterestRate
+        {
+            get
+            {
+                return interestRate;
+            }
+            set  //(double value)
+            {
+                var delta = interestRate / 10;
+                var min = interestRate - delta;
+                var max = interestRate + delta;
+
+                if (value >= min && value < max)
+                {
+                    interestRate = value;
+                }
+            }
+        }
+
+       
 
 
         //public string GetPassword() { return password; }
@@ -28,46 +52,30 @@ namespace ConceptArchitect.Finance
                 password= newPassword;
         }
 
-        public int GetAccountNumber() { return accountNumber; }
-        
-        //account number change not permitted
-        //public void SetAccountNumber(int accountNumber) { this.accountNumber = accountNumber; }
-
-        public double GetBalance() { return balance; }
-
-        // Shouldn't be permitted.
-        //public void SetBalance(double value) {  balance = value; }
+        public int AccountNumber { get { return accountNumber; } }
+        public double Balance { get { return balance; } }
 
 
-        public string GetName() { return name; }
-        public void SetName(string name) {
 
-            var newNameIndex = name.LastIndexOf(" ");
-            if (newNameIndex == -1)
-                return;
-            var currentNameIndex = this.name.LastIndexOf(" ");
+        public string Name {
+            get { return name; }
+            set {
 
-            var currentLastName= this.name.Substring(currentNameIndex + 1);
-            var newLastName = name.Substring(newNameIndex + 1);
+                var newNameIndex = value.LastIndexOf(" ");
+                if (newNameIndex == -1)
+                    return;
+                var currentNameIndex = name.LastIndexOf(" ");
 
-            if(currentLastName==newLastName)
-                 this.name = name; 
-        
+                var currentLastName = name.Substring(currentNameIndex + 1);
+                var newLastName = value.Substring(newNameIndex + 1);
+
+                if (currentLastName == newLastName)
+                    name = value;
+
+            }
         }
 
-        public double GetInterestRate() { return interestRate; }
-        public void SetInterestRate(double rate) 
-        {
-            var delta = interestRate / 10;
-            var min = interestRate - delta;
-            var max = interestRate + delta;
-
-            if (rate >= min && rate < max)
-            {
-                   interestRate = rate;
-            }
-        
-        }   
+       
 
 
         public BankAccount(int accountNumber, string name, string password, int amount, double interestRate)

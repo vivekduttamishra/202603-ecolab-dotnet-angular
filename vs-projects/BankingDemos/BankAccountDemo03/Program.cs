@@ -40,19 +40,24 @@ namespace ConceptArchitect.Finance.App
 
            
 
-            Console.WriteLine("Current Rate: "+ account4.GetInterestRate());
-            account4.SetInterestRate(100); //should fail
-            Console.WriteLine("Rate after Setting to 100:" + account4.GetInterestRate());
-
-            account4.SetInterestRate(11); //should work
-            Console.WriteLine("Rate after Setting to 11:" + account4.GetInterestRate());
+            Console.WriteLine("Current Rate: "+ account4.InterestRate);
+            account4.InterestRate=100; //should fail
+            Console.WriteLine("Rate after Setting to 100:" + account4.InterestRate);
 
 
-            Console.WriteLine($"Current Name:{account4.GetName()}");
-            account4.SetName("Santosh Singh"); //should fail
-            Console.WriteLine($"Name after change to Santosh Singh: {account4.GetName()}");
-            account4.SetName("Sanjay Mall"); //should work
-            Console.WriteLine($"Name after change to Sanjay Mall: {account4.GetName()}");
+
+            // account4.SetInterestRate(11); //should work
+
+            account4.InterestRate = 11;  //calls set with value = 11
+            
+            Console.WriteLine("Rate after Setting to 11:" + account4.InterestRate ); //calls get
+
+
+            Console.WriteLine($"Current Name:{account4.Name}");
+            account4.Name="Santosh Singh"; //should fail
+            Console.WriteLine($"Name after change to Santosh Singh: {account4.Name}");
+            account4.Name="Sanjay Mall"; //should work
+            Console.WriteLine($"Name after change to Sanjay Mall: {account4.Name}");
 
 
 
