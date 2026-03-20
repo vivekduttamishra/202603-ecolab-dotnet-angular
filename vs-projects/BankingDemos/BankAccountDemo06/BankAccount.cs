@@ -122,7 +122,7 @@ namespace ConceptArchitect.Finance
 
         }
 
-        public void Transfer(int amount, string password, BankAccount to)
+        public bool Transfer(int amount, string password, BankAccount to)
         {
             if (Withdraw(amount, password))
                 return to.Deposit(amount);
@@ -135,7 +135,7 @@ namespace ConceptArchitect.Finance
             balance += balance * interestRate / 1200;
         }
 
-        public void Info
+        public string Info
         {
             get
             {

@@ -21,7 +21,7 @@ namespace ConceptArchitect.Finance.App
             if(success)
                 System.Console.WriteLine("Tranferred successfully");
             else
-                System.Console.WriteLine("Transferred Failed");
+                System.Console.WriteLine("Transfer Failed");
 
             System.Console.WriteLine($"a1: {a1.Info}");
             System.Console.WriteLine($"a2: {a2.Info}");
