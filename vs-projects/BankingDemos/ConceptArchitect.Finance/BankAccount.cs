@@ -12,12 +12,10 @@ namespace ConceptArchitect.Finance
         private string password;
         private double balance;
         private static double interestRate;
-        private static int lastId = 0;
 
-        public BankAccount(string name, string password, int amount)
+        public BankAccount(int accountNumber,string name, string password, int amount)
         {
-            lastId++;
-            this.accountNumber = lastId;
+            this.accountNumber = accountNumber;
             this.name = name;
             this.password = password;
             this.balance = amount;
