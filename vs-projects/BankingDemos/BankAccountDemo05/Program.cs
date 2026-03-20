@@ -1,0 +1,36 @@
+﻿
+
+using ConceptArchitect.Finance;
+using System.Runtime.InteropServices;
+
+namespace ConceptArchitect.Finance.App
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var a1 = new BankAccount( "Vivek Dutta Mishra", "pass1", 20000);
+
+            var a2 = new BankAccount( "Sanjay Mall", "pass2", 30000);
+
+            a1.ShowInfo();
+            a2.ShowInfo();
+            // a1.Withdraw(1000, "wrong-password");
+            // a1.Withdraw(1, "pass1");
+
+            a1.Transfer(500000,"pass1",a2);
+
+            a1.ShowInfo();
+            a2.ShowInfo();
+
+
+        }
+
+        private static void TestAccount(BankAccount account)
+        {
+            
+        }
+    }
+
+   
+}
