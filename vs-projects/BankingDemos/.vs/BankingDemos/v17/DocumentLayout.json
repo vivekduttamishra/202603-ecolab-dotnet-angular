@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{018C6A09-79B6-4BBE-8230-240E2F076DF1}|ConceptArchitect.Finance.V3.Specs\\ConceptArchitect.Finance.V3.Specs.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\conceptarchitect.finance.v3.specs\\savingsaccountspec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{018C6A09-79B6-4BBE-8230-240E2F076DF1}|ConceptArchitect.Finance.V3.Specs\\ConceptArchitect.Finance.V3.Specs.csproj|solutionrelative:conceptarchitect.finance.v3.specs\\savingsaccountspec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42DD5B3D-CB6B-407B-9680-320B592E7AB0}|ConceptArchitect.Finance.V3\\ConceptArchitect.Finance.V3.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\conceptarchitect.finance.v3\\savingsaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42DD5B3D-CB6B-407B-9680-320B592E7AB0}|ConceptArchitect.Finance.V3\\ConceptArchitect.Finance.V3.csproj|solutionrelative:conceptarchitect.finance.v3\\savingsaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42DD5B3D-CB6B-407B-9680-320B592E7AB0}|ConceptArchitect.Finance.V3\\ConceptArchitect.Finance.V3.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\conceptarchitect.finance.v3\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42DD5B3D-CB6B-407B-9680-320B592E7AB0}|ConceptArchitect.Finance.V3\\ConceptArchitect.Finance.V3.csproj|solutionrelative:conceptarchitect.finance.v3\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{018C6A09-79B6-4BBE-8230-240E2F076DF1}|ConceptArchitect.Finance.V3.Specs\\ConceptArchitect.Finance.V3.Specs.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\conceptarchitect.finance.v3.specs\\bankaccountspec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{018C6A09-79B6-4BBE-8230-240E2F076DF1}|ConceptArchitect.Finance.V3.Specs\\ConceptArchitect.Finance.V3.Specs.csproj|solutionrelative:conceptarchitect.finance.v3.specs\\bankaccountspec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BankAccountSpec.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3.Specs\\BankAccountSpec.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Finance.V3.Specs\\BankAccountSpec.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3.Specs\\BankAccountSpec.cs",
+              "RelativeToolTip": "ConceptArchitect.Finance.V3.Specs\\BankAccountSpec.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAYwHwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T11:40:13.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BankAccount.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3\\BankAccount.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Finance.V3\\BankAccount.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3\\BankAccount.cs",
+              "RelativeToolTip": "ConceptArchitect.Finance.V3\\BankAccount.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T11:36:08.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SavingsAccount.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3\\SavingsAccount.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Finance.V3\\SavingsAccount.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3\\SavingsAccount.cs",
+              "RelativeToolTip": "ConceptArchitect.Finance.V3\\SavingsAccount.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T11:23:49.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SavingsAccountSpec.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3.Specs\\SavingsAccountSpec.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Finance.V3.Specs\\SavingsAccountSpec.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3.Specs\\SavingsAccountSpec.cs",
+              "RelativeToolTip": "ConceptArchitect.Finance.V3.Specs\\SavingsAccountSpec.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAowDkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T11:22:15.488Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
