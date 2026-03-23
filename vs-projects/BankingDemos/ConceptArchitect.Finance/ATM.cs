@@ -50,7 +50,7 @@ public class ATM
         int choice;
         do
         {
-            choice = keyboard.GetInt("1. Deposit 2. Withdraw 3. Transfer 5. Show Balance 5. Close Account 0. Exit");
+            choice = keyboard.GetInt("1. Deposit 2. Withdraw 3. Transfer 4. Show Balance 5. Close Account 0. Exit");
             switch(choice)
             {
                 case 1:
@@ -63,10 +63,10 @@ public class ATM
                     HandleTransfer();
                     break;
                 case 4:
-                    ShowInfo();
+                    HandleShowInfo();
                     break;
                 case 5:
-                    CloseAccount();
+                    HandleCloseAccount();
                     return;
                 case 0:
                     return;
@@ -79,14 +79,24 @@ public class ATM
         }while(choice!=0);
     }
 
-    private void CloseAccount()
+    private void HandleCloseAccount()
     {
-        throw new NotImplementedException();
+        var confirmPassword=keyboard.GetString("Re confirm password to close your account:");
+
+        var balance=bank.CloseAccount(accountNumber, confirmPassword);
+        if(double.IsNaN(balance))
+            PrintError("Account Close Failed");
+        else
+        {
+            PrintInfo("Your Account is Closed");
+            DispenseCash((int)balance);
+        }
     }
 
-    private void ShowInfo()
+    private void HandleShowInfo()
     {
-        throw new NotImplementedException();
+        var info = bank.GetInfo(accountNumber,password);
+        PrintInfo(info);
     }
 
     private void HandleTransfer()
@@ -113,17 +123,23 @@ public class ATM
 
     private void PrintError(string message)
     {
-        Console.Error.WriteLine(message);
+         Console.ForegroundColor=ConsoleColor.Red;
+        System.Console.WriteLine(message);
+        Console.ResetColor();
     }
 
     private void PrintInfo(string message)
     {
-        Console.WriteLine(message);
+        Console.ForegroundColor=ConsoleColor.Blue;
+        System.Console.WriteLine(message);
+        Console.ResetColor();
     }
 
     private void DispenseCash(int amount)
     {
+        Console.ForegroundColor=ConsoleColor.Yellow;
         Console.WriteLine($"Please collect your cash: ₹{amount}");
+        Console.ResetColor();
     }
 
     private void HandleDeposit()

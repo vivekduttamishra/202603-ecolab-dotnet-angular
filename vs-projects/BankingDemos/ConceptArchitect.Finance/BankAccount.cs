@@ -98,13 +98,14 @@ namespace ConceptArchitect.Finance
 
         public bool Withdraw(int amount, string password)
         {
+            bool result=true;
             if (amount < 0)
             {
-                return false;
+                result= false;
             }
             else if (amount > balance)
             {
-                return false;
+                result= false;
             }
             else if (!Authenticate(password))
             {
@@ -112,12 +113,12 @@ namespace ConceptArchitect.Finance
             }
             else
             {
-
-                balance -= amount;
-                return true;
+                result=true;
+                balance-=amount;
             }
-
-
+           
+            
+            return result;
         }
 
         public bool Transfer(int amount, string password, BankAccount to)

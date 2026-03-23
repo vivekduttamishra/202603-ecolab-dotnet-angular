@@ -117,4 +117,14 @@ public class Bank
         //DO IT: RETURN INFORMATION ABOUT EACH ACCOUNT
         return null;
     }
+
+   public  string GetInfo(int accountNumber, string password)
+    {
+        var account = GetAccount(accountNumber);
+        if(account==null || !account.Authenticate(password))
+            return "Invalid Account";
+
+        return account.Info;
+
+    }
 }
