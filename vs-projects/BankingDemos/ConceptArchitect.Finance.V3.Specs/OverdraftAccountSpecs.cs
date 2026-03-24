@@ -47,7 +47,7 @@ public class OverdraftAccountSpecs
     }
 
     [Fact(
-        Skip = "Not Yet Implemented"
+        //Skip = "Not Yet Implemented"
     )]
     public void Deposit_ShouldNotUpdateOdLimitIfItDoesntCrossesHistoricMaxBalance()
     {
@@ -66,7 +66,7 @@ public class OverdraftAccountSpecs
     }
 
     [Fact(
-        Skip = "Not Yet Implemented"
+        //Skip = "Not Yet Implemented"
     )]
     public void CreditInterest_ShouldUpdateOdLimitIfItCrossesHistoricMaxBalance()
     {
@@ -81,7 +81,7 @@ public class OverdraftAccountSpecs
     }
 
     [Fact(
-        Skip = "Not Yet Implemented"
+       // Skip = "Not Yet Implemented"
     )]
     public void CreditInterest_ShouldNotUpdateOdLimitIfItDoesntCrossesHistoricMaxBalance()
     {
@@ -100,7 +100,7 @@ public class OverdraftAccountSpecs
     }
 
     [Fact(
-        Skip = "Not Yet Implemented"
+        //Skip = "Not Yet Implemented"
     )]
     public void Withdraw_ShouldNotChangeOdLimt()
     {
@@ -116,7 +116,7 @@ public class OverdraftAccountSpecs
 
 
     [Fact(
-        Skip = "Not Yet Implemented"
+        //Skip = "Not Yet Implemented"
     )]
     public void Withdraw_ShouldFailForAmountGreaterThanBalancePlusOdLimt()
     {
@@ -128,11 +128,11 @@ public class OverdraftAccountSpecs
     }
 
     [Fact(
-        Skip = "Not Yet Implemented"
+        //Skip = "Not Yet Implemented"
     )]
-    public void Withdraw_ShouldSucceedForAmountUptoBalancePlusOdLimt()
+    public void Withdraw_ShouldSucceedForAmountGreaterThanBalance()
     {
-        var result = account.Withdraw(amount+account.OdLimit, password);
+        var result = account.Withdraw(amount+1, password);
 
         Assert.True(result);
 
@@ -140,8 +140,29 @@ public class OverdraftAccountSpecs
 
     }
 
+    [Fact()]
+    public void Withdraw_OdLimitIsInclusiveOfOdfee()
+    {
+        var maxAmount = amount+account.OdLimit*0.95; //Leave 5% for Odfee
+
+        var result = account.Withdraw(maxAmount, password);
+
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void Withdraw_FailsForAmountPlusOdFeeExceedingBalancePlusOdLimit()
+    {
+        var withdrawAmount= amount+account.OdLimit; //it actaully calcuate to amount+OdLimit+ 0.05*OdLimit
+
+        var result= account.Withdraw(withdrawAmount,password);
+
+        Assert.False(result);
+        Assert.Equal(amount, account.Balance, 0.01);
+    }
+
     [Fact(
-        Skip = "Not Yet Implemented"
+        //Skip = "Not Yet Implemented"
     )]
     public void Withdraw_ShouldAddOdFeeOnOdAmount()
     {

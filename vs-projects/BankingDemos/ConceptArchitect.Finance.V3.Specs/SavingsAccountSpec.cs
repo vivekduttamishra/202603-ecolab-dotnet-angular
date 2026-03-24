@@ -24,14 +24,14 @@ namespace ConceptArchitect.Finance.V3.Specs
         [Fact]
         public void SavingAccountObjectsAreOfTypeSavingsAccount()
         {
-            
-            Assert.IsType(typeof(SavingsAccount),account);
+
+            Assert.IsType(typeof(SavingsAccount), account);
         }
 
         [Fact]
         public void SavingsAccountIsATypeOfBankAccount()
         {
-           
+
             Assert.True(account is BankAccount);
         }
 
@@ -46,7 +46,7 @@ namespace ConceptArchitect.Finance.V3.Specs
         {
             account.Deposit(1);
 
-            Assert.Equal(amount+1, account.Balance);
+            Assert.Equal(amount + 1, account.Balance);
         }
 
         [Fact]
@@ -58,10 +58,10 @@ namespace ConceptArchitect.Finance.V3.Specs
             Assert.Equal(amount, account.Balance);
         }
 
-         [Fact]
+        [Fact]
         public void Withdraw_ShouldFollowSavingsAccountRuleEvenWithBankAccountReference()
         {
-            BankAccount bankAccount= account;
+            BankAccount bankAccount = account;
 
             //without virtual/override Withdraw will call BankAccount.Withdraw
             //with virtual/override Withdraw will call SavingsAccount.Withdraw
@@ -71,7 +71,7 @@ namespace ConceptArchitect.Finance.V3.Specs
             Assert.Equal(amount, account.Balance);
 
             //not try success
-            result = bankAccount.Withdraw(amount-account.MinBalance, password);
+            result = bankAccount.Withdraw(amount - account.MinBalance, password);
             Assert.True(result);
             Assert.Equal(account.MinBalance, account.Balance);
         }
@@ -79,9 +79,21 @@ namespace ConceptArchitect.Finance.V3.Specs
         [Fact]
         public void Withdraw_SucceedsForAmount_minus_MinBalance()
         {
-            var result = account.Withdraw( amount-account.MinBalance, password);
+            var result = account.Withdraw(amount - account.MinBalance, password);
             Assert.True(result);
-            Assert.Equal(account.MinBalance, account.Balance,0.01);
+            Assert.Equal(account.MinBalance, account.Balance, 0.01);
+        }
+
+
+        [Fact]
+        public void CreditInterst_CreditsOneMonthInterest()
+        {
+            var expectedInterest = amount * interestRate / 1200;
+
+            account.CreditInterest(interestRate);
+
+            Assert.Equal(amount+expectedInterest, account.Balance);
+
         }
     }
 }

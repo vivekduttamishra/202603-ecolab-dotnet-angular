@@ -5,7 +5,7 @@
 
 namespace ConceptArchitect.Finance;
 
-public class BankAccount
+public abstract class BankAccount
 {
     public BankAccount(int accountNumber, string name, string password, double amount)
     {
@@ -16,12 +16,12 @@ public class BankAccount
         Balance = amount;
     }
 
-   
+
     //public string AccountType { get; }
     public int AccountNumber { get; }
     public string Name { get; }
     public string Password { get; }
-   
+
     public double Balance { get; protected set; }
 
     public bool Authenticate(string password)
@@ -41,6 +41,8 @@ public class BankAccount
         return amount > 0;
     }
 
+    public abstract double EffectiveBalance{get;}
+    
     public virtual bool Withdraw(double amount, string password)
     {
         if (amount <= 0)
@@ -48,7 +50,7 @@ public class BankAccount
         if (!Authenticate(password))
             return false;
 
-        if (amount > Balance)
+        if (amount > EffectiveBalance)
             return false;
 
         Balance -= amount;

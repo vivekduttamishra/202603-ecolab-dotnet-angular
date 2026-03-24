@@ -32,7 +32,7 @@ public class BankAccountSpec
 
     public BankAccountSpec()
     {
-        account = new BankAccount(accountNumber, name, password, amount);
+        account = new CurrentAccount(accountNumber, name, password, amount);
     }
 
 
@@ -42,7 +42,7 @@ public class BankAccountSpec
     )]
     public void New_BankAccountWillTake_Type_AccountNumber_Name_Password()
     {
-        BankAccount account = new BankAccount(accountNumber, name, password, amount);
+        BankAccount account = new CurrentAccount(accountNumber, name, password, amount);
 
         Assert.Equal(accountNumber, account.AccountNumber);
         Assert.Equal(name, account.Name);
@@ -116,7 +116,7 @@ public class BankAccountSpec
 
 
     [Fact(
-    // Skip = "Not Yet Implemented"
+     Skip = "To be Implemented at Subclass Level"
     )]
     public void CreditInterst_CreditsOneMonthInterest()
     {

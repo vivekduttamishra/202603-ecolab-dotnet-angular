@@ -9,6 +9,8 @@ public class CurrentAccount : BankAccount
     {
     }
 
+    public override double EffectiveBalance {get {return Balance;}}
+
     public override void CreditInterest(double interestRate)
     {
         //DO NOTHING
