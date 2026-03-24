@@ -15,17 +15,12 @@ namespace ConceptArchitect.Finance
             MinBalance = 5000;
         }
 
-        public bool Withdraw(double amount, string password)
+        public override bool Withdraw(double amount, string password)
         {
-            if (amount < 1)
-                return false;
-            if (!Authenticate(password))
-                return false;
             if (amount > Balance - MinBalance)
                 return false;
 
-            Balance -= amount;
-            return true;
+            return base.Withdraw(amount,password);
         }
     }
 }

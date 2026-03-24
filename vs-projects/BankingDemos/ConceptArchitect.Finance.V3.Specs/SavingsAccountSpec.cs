@@ -57,5 +57,31 @@ namespace ConceptArchitect.Finance.V3.Specs
             Assert.False(result);
             Assert.Equal(amount, account.Balance);
         }
+
+         [Fact]
+        public void Withdraw_ShouldFollowSavingsAccountRuleEvenWithBankAccountReference()
+        {
+            BankAccount bankAccount= account;
+
+            //without virtual/override Withdraw will call BankAccount.Withdraw
+            //with virtual/override Withdraw will call SavingsAccount.Withdraw
+            var result = bankAccount.Withdraw(amount - account.MinBalance + 1, password);
+
+            Assert.False(result);
+            Assert.Equal(amount, account.Balance);
+
+            //not try success
+            result = bankAccount.Withdraw(amount-account.MinBalance, password);
+            Assert.True(result);
+            Assert.Equal(account.MinBalance, account.Balance);
+        }
+
+        [Fact]
+        public void Withdraw_SucceedsForAmount_minus_MinBalance()
+        {
+            var result = account.Withdraw( amount-account.MinBalance, password);
+            Assert.True(result);
+            Assert.Equal(account.MinBalance, account.Balance,0.01);
+        }
     }
 }

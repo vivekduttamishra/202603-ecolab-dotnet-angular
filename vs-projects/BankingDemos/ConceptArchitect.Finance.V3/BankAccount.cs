@@ -29,26 +29,24 @@ public class BankAccount
         return this.Password == password;
     }
 
-    public void CreditInterest(double interestRate)
+    public virtual void CreditInterest(double interestRate)
     {
         Balance += Balance * interestRate / 1200;
     }
 
-    public bool Deposit(double amount)
+    public virtual bool Deposit(double amount)
     {
         if (amount > 0)
             Balance += amount;
         return amount > 0;
     }
 
-    public bool Withdraw(double amount, string password)
+    public virtual bool Withdraw(double amount, string password)
     {
         if (amount <= 0)
             return false;
         if (!Authenticate(password))
             return false;
-
-
 
         if (amount > Balance)
             return false;
@@ -56,6 +54,5 @@ public class BankAccount
         Balance -= amount;
         return true;
     }
-
 
 }
