@@ -93,6 +93,7 @@ public class ATM
                         break;
                 }
             }
+           
             catch(InvalidDenominationException ex)
             {
                 PrintError(ex.Message);
