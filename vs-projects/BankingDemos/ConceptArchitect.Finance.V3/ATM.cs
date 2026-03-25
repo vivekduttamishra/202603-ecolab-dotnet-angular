@@ -11,29 +11,31 @@ public class ATM
 
     public ATM(Bank bank)
     {
-        this.bank=bank;
+        this.bank = bank;
     }
 
     public void Start()
     {
-        
-            LoginScreen();
-      
+
+        LoginScreen();
+        PrintInfo("ATM shutdown");
+
     }
 
     private void LoginScreen()
     {
-        while(true)
-        {
-            Console.Clear();
-            Console.WriteLine("Login");
-            accountNumber = keyboard.GetInt("Account Number: ");
-            password = keyboard.GetString("Password: ");
-            if(accountNumber==-1 && password=="NIMDA")
-                AdminMenu();
-            else
-                MainMenu();
-        }
+            while (true)
+            {
+
+                Console.Clear();
+                Console.WriteLine("Login Menu");
+                accountNumber = keyboard.GetInt("Account Number: ");
+                password = keyboard.GetString("Password: ");
+                if (accountNumber == -1 && password == "NIMDA")
+                    AdminMenu();
+                else
+                    MainMenu();
+            }
     }
 
     private void AdminMenu()
@@ -43,8 +45,8 @@ public class ATM
         {
             choice = keyboard.GetInt("1. Open Account 2. Credit Interest 3. Show All Accounts 4. Shutdown 0. Exit");
             //DO IT YOURSELF
-            
-        }while(choice!=0);
+
+        } while (choice != 0);
     }
 
     private void MainMenu()
@@ -52,9 +54,10 @@ public class ATM
         int choice;
         do
         {
-            Console.Clear();
+            //Console.Clear();
+
             choice = keyboard.GetInt("1. Deposit 2. Withdraw 3. Transfer 4. Show Balance 5. Close Account 0. Exit");
-            switch(choice)
+            switch (choice)
             {
                 case 1:
                     HandleDeposit();
@@ -79,15 +82,15 @@ public class ATM
             }
 
 
-        }while(choice!=0);
+        } while (choice != 0);
     }
 
     private void HandleCloseAccount()
     {
-        var confirmPassword=keyboard.GetString("Re confirm password to close your account:");
+        var confirmPassword = keyboard.GetString("Re confirm password to close your account:");
 
-        var balance=bank.CloseAccount(accountNumber, confirmPassword);
-        if(double.IsNaN(balance))
+        var balance = bank.CloseAccount(accountNumber, confirmPassword);
+        if (double.IsNaN(balance))
             PrintError("Account Close Failed");
         else
         {
@@ -98,17 +101,17 @@ public class ATM
 
     private void HandleShowInfo()
     {
-        var info = bank.GetInfo(accountNumber,password);
+        var info = bank.GetInfo(accountNumber, password);
         PrintInfo(info);
     }
 
     private void HandleTransfer()
     {
-        var toAccount =keyboard.GetInt("To Account?");
+        var toAccount = keyboard.GetInt("To Account?");
         var amount = keyboard.GetInt("Amount?");
 
-        var success = bank.Transfer(accountNumber,amount,password, toAccount);
-        if(success)
+        var success = bank.Transfer(accountNumber, amount, password, toAccount);
+        if (success)
             PrintInfo("Transfer successful");
         else
             PrintError("Transaction Failed");
@@ -133,21 +136,21 @@ public class ATM
 
     private void PrintError(string message)
     {
-         Console.ForegroundColor=ConsoleColor.Red;
+        Console.ForegroundColor = ConsoleColor.Red;
         System.Console.WriteLine(message);
         Console.ResetColor();
     }
 
     private void PrintInfo(string message)
     {
-        Console.ForegroundColor=ConsoleColor.Blue;
+        Console.ForegroundColor = ConsoleColor.Blue;
         System.Console.WriteLine(message);
         Console.ResetColor();
     }
 
     private void DispenseCash(int amount)
     {
-        Console.ForegroundColor=ConsoleColor.Yellow;
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine($"Please collect your cash: ₹{amount}");
         Console.ResetColor();
     }

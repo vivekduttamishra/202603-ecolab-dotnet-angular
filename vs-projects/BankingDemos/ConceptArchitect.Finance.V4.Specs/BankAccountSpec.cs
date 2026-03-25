@@ -1,6 +1,7 @@
 ﻿namespace ConceptArchitect.Finance.Specs;
 
 using ConceptArchitect.Finance;
+using Xunit.Sdk;
 
 public class BankAccountSpec
 {
@@ -64,9 +65,20 @@ public class BankAccountSpec
     )]
     public void Authenticate_FailsWithInCorrectPassword()
     {
-        Assert.False(account.Authenticate("wrong-password"));
-        
+        //Assert.False(account.Authenticate("wrong-password"));
 
+        try
+        {
+            account.Authenticate(password);
+            //Expected Exception was not thrown
+            //this is a test failure
+            Assert.Fail($"Expected Exception Invalid Credentials Was Not thrown");
+        }catch(Exception ex)
+        {
+            if(ex is FailException)
+                throw ex; //throw it again
+            Assert.Equal("Invalid Credentials", ex.Message);
+        }
 
 
     }

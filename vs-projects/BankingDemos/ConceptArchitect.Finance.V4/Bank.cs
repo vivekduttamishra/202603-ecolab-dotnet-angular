@@ -34,7 +34,7 @@ public class Bank
         var accountNumber = ++lastId;
 
         //step 2. create account
-        var account = new BankAccount(accountNumber, name, password, amount);
+        var account = new SavingsAccount(accountNumber, name, password, amount);
 
         //step 3. add the account to accounts collection
         accounts[accountNumber] = account;
@@ -134,7 +134,7 @@ public class Bank
         if(account==null || !account.Authenticate(password))
             return "Invalid Account";
 
-        return account.Info;
+        return account.ToString();
 
     }
 }
