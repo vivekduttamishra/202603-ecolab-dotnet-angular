@@ -45,7 +45,7 @@ public class Bank
 
     BankAccount GetAccount(int accountNumber)
     {
-        if(accounts[accountNumber]==null)
+        if(accountNumber<1 || accountNumber>lastId || accounts[accountNumber]==null)
             return null;
         else
             return accounts[accountNumber];

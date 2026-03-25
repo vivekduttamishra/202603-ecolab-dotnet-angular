@@ -11,11 +11,10 @@ public class OverdraftAccount : BankAccount
         AdjustOdLimit();
     }
 
-    public override bool Deposit(double amount)
+    public override void Deposit(double amount)
     {
-        var result = base.Deposit(amount);
+        base.Deposit(amount);
         AdjustOdLimit();
-        return result;
     }
 
     private void AdjustOdLimit()
@@ -32,7 +31,7 @@ public class OverdraftAccount : BankAccount
 
     public override double EffectiveBalance { get{ return Balance+OdLimit; }}
 
-    public override bool Withdraw(double amount, string password)
+    public override void Withdraw(double amount, string password)
     {
 
         if(amount>Balance)
@@ -41,7 +40,7 @@ public class OverdraftAccount : BankAccount
             amount+=od;
         }
 
-        return base.Withdraw(amount, password);
+        base.Withdraw(amount, password);
     }
     
 }

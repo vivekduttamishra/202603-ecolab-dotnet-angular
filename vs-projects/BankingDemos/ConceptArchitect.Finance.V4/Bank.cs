@@ -1,7 +1,7 @@
 namespace ConceptArchitect.Finance;
 
 using System;
-
+using ConceptArchitect.Finance.Exceptions;
 
 public class Bank
 {
@@ -45,8 +45,8 @@ public class Bank
 
     BankAccount GetAccount(int accountNumber)
     {
-        if(accounts[accountNumber]==null)
-            return null;
+        if(accountNumber<1 || accountNumber>lastId || accounts[accountNumber]==null)
+            throw new InvalidAccountException(accountNumber);
         else
             return accounts[accountNumber];
     }
@@ -56,64 +56,36 @@ public class Bank
         //step1 get the account
        
         var account = GetAccount(accountNumber);
-
-        if(account==null) //already closed
-            return double.NaN;
-
-
-        //step2 remove it from accounts
-        if (account.Authenticate(password))
-        {
-            accounts[accountNumber] = null; //removed
-            //step3. return the account balance;
-            return account.Balance;
-
-        }
-        else
-        {
-            return double.NaN; 
-        }
-
+        account.Authenticate(password);
+        accounts[accountNumber] = null; //removed
+        return account.Balance;
     }
 
-    public bool Withdraw(int accountNumber, int amount, string password)
+    public void Withdraw(int accountNumber, int amount, string password)
     {
         
         var account= GetAccount(accountNumber);
 
-        if(account==null)
-            return false;
-
-        return account.Withdraw(amount,password);
-
-
+        account.Withdraw(amount,password);
     }
 
 
-    public bool Deposit(int accountNumber, int amount)
+    public void Deposit(int accountNumber, int amount)
     {
         var account = GetAccount(accountNumber);
-        if(account==null)
-            return false;
-        
-        return account.Deposit(amount);
+        account.Deposit(amount);
     }
 
-    public bool Transfer(int sourceAccountNumber, int amount, string password, int targetAccountNumber)
+    public void Transfer(int sourceAccountNumber, int amount, string password, int targetAccountNumber)
     {
         //DO IT
         var sourceAccount = GetAccount(sourceAccountNumber);
-        if(sourceAccount==null)
-            return false;
 
         var targetAccount=GetAccount(targetAccountNumber);
-        if(targetAccount==null)
-            return false;
 
-        if(sourceAccount.Withdraw(amount,password)==false)
-            return false;
+        sourceAccount.Withdraw(amount,password);
 
-        return targetAccount.Deposit(amount);
+        targetAccount.Deposit(amount);
     }
 
     public void CreditInterest()
@@ -131,9 +103,7 @@ public class Bank
    public  string GetInfo(int accountNumber, string password)
     {
         var account = GetAccount(accountNumber);
-        if(account==null || !account.Authenticate(password))
-            return "Invalid Account";
-
+        account.Authenticate(password);
         return account.ToString();
 
     }

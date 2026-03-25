@@ -3,6 +3,8 @@
 
 
 
+using ConceptArchitect.Finance.Exceptions;
+
 namespace ConceptArchitect.Finance;
 
 public abstract class BankAccount
@@ -20,20 +22,22 @@ public abstract class BankAccount
     //public string AccountType { get; }
     public int AccountNumber { get; }
     public string Name { get; }
-    public string Password { get; }
+    public string Password { get; private set; }
 
     public double Balance { get; protected set; }
 
-    public bool Authenticate(string password)
+    public void Authenticate(string password)
     {
         if (this.Password != password)
-        {
-            //return false;
-            throw new Exception("Invalid Credentials");
-        } else
-        {
-            return true;
-        }
+            throw new InvalidCredentialsException(AccountNumber);
+        //no news is good news
+    }
+
+
+    public void ChangePassword(string originalPassword, string newPassword)
+    {
+        Authenticate(originalPassword);
+        Password=newPassword;
     }
 
     public virtual void CreditInterest(double interestRate)
@@ -41,27 +45,31 @@ public abstract class BankAccount
         Balance += Balance * interestRate / 1200;
     }
 
-    public virtual bool Deposit(double amount)
+    public virtual void  Deposit(double amount)
     {
-        if (amount > 0)
+            ValidateAmount(amount);
             Balance += amount;
-        return amount > 0;
     }
 
     public abstract double EffectiveBalance{get;}
-    
-    public virtual bool Withdraw(double amount, string password)
+
+    private void ValidateAmount(double amount)
     {
-        if (amount <= 0)
-            return false;
-        if (!Authenticate(password))
-            return false;
+        if(amount<=0)
+            throw new InvalidDenominationException("Amount Must be Positive");
+    }
+    
+    public virtual void Withdraw(double amount, string password)
+    {
+                
+        ValidateAmount(amount);
+        
+        Authenticate(password); 
 
         if (amount > EffectiveBalance)
-            return false;
+            throw new InsufficientBalanceException(AccountNumber, amount-EffectiveBalance);
 
         Balance -= amount;
-        return true;
     }
 
     public override string ToString()

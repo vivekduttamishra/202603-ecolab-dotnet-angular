@@ -1,3 +1,4 @@
+using ConceptArchitect.Finance.Exceptions;
 using ConceptArchitect.Utils;
 
 namespace ConceptArchitect.Finance.Firmeware;
@@ -38,7 +39,7 @@ public class ATM
                 else
                     MainMenu();
             }
-            catch (Exception ex)
+            catch (BankingException ex)
             {
                 PrintError(ex.Message);
                 keyboard.GetString("Hit Enter to exit");
@@ -59,35 +60,58 @@ public class ATM
 
     private void MainMenu()
     {
-        int choice;
+        int choice=0;
         do
         {
             //Console.Clear();
-
-            choice = keyboard.GetInt("1. Deposit 2. Withdraw 3. Transfer 4. Show Balance 5. Close Account 0. Exit");
-            switch (choice)
+            
+            try
             {
-                case 1:
-                    HandleDeposit();
-                    break;
-                case 2:
-                    HandleWithdraw();
-                    break;
-                case 3:
-                    HandleTransfer();
-                    break;
-                case 4:
-                    HandleShowInfo();
-                    break;
-                case 5:
-                    HandleCloseAccount();
-                    return;
-                case 0:
-                    return;
-                default:
-                    Console.WriteLine("Invalid Choice");
-                    break;
+
+                choice = keyboard.GetInt("1. Deposit 2. Withdraw 3. Transfer 4. Show Balance 5. Close Account 0. Exit");
+                switch (choice)
+                {
+                    case 1:
+                        HandleDeposit();
+                        break;
+                    case 2:
+                        HandleWithdraw();
+                        break;
+                    case 3:
+                        HandleTransfer();
+                        break;
+                    case 4:
+                        HandleShowInfo();
+                        break;
+                    case 5:
+                        HandleCloseAccount();
+                        return;
+                    case 0:
+                        return;
+                    default:
+                        Console.WriteLine("Invalid Choice");
+                        break;
+                }
             }
+            catch(InvalidDenominationException ex)
+            {
+                PrintError(ex.Message);
+            }
+            catch(InsufficientBalanceException ex)
+            {
+                PrintError($"Insufficient Balance. Total Deficit is {ex.Deficit}");
+            }
+            catch(InvalidAccountException ex)
+            {
+                //from account shouldn't be invalid
+                if(ex.AccountNumber!=accountNumber)
+                {
+                    PrintError($"Invalid Recepient Account: {ex.AccountNumber}");
+                }
+                else
+                    throw;
+            }
+
 
 
         } while (choice != 0);
@@ -98,13 +122,8 @@ public class ATM
         var confirmPassword = keyboard.GetString("Re confirm password to close your account:");
 
         var balance = bank.CloseAccount(accountNumber, confirmPassword);
-        if (double.IsNaN(balance))
-            PrintError("Account Close Failed");
-        else
-        {
-            PrintInfo("Your Account is Closed");
-            DispenseCash((int)balance);
-        }
+        PrintInfo("Your Account is Closed");
+        DispenseCash((int)balance);
     }
 
     private void HandleShowInfo()
@@ -118,28 +137,16 @@ public class ATM
         var toAccount = keyboard.GetInt("To Account?");
         var amount = keyboard.GetInt("Amount?");
 
-        var success = bank.Transfer(accountNumber, amount, password, toAccount);
-        if (success)
-            PrintInfo("Transfer successful");
-        else
-            PrintError("Transaction Failed");
+        bank.Transfer(accountNumber, amount, password, toAccount);
+        PrintInfo("Transfer successful");
     }
 
     private void HandleWithdraw()
     {
         var amount = keyboard.GetInt("Amount? ");
-        bool success = bank.Withdraw(accountNumber, amount, password);
-        if (success)
-        {
-            DispenseCash(amount);
-            PrintInfo("Transaction Success");
-
-        }
-        else
-        {
-            PrintError("Transction Failed");
-        }
-
+        bank.Withdraw(accountNumber, amount, password);
+        DispenseCash(amount);
+        PrintInfo("Transaction Success");
     }
 
     private void PrintError(string message)
@@ -165,6 +172,8 @@ public class ATM
 
     private void HandleDeposit()
     {
-        throw new NotImplementedException();
+        var amount = keyboard.GetInt("Amount?");
+        bank.Deposit(accountNumber, amount);
+        PrintInfo("Amount Deposited");
     }
 }
