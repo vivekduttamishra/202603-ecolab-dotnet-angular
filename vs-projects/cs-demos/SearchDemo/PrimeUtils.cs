@@ -1,9 +1,9 @@
 namespace ConceptArchitect.Utils;
 
-public class PrimeUtils
+public static class PrimeUtils
 {
     
-    public static  bool IsPrime(int value)
+    public static  bool IsPrime(this int value)
     {
         if(value<2)
             return false;
