@@ -27,9 +27,11 @@ class Program
 
     static int PermutationAsync(int n, int r)
     {
-        var tn = Task.Factory.StartNew(()=>Factorial(n));
+        var tn = Task.Factory.StartNew(()=>Factorial(n)); //task started on other thread
         var tn_r= Task.Factory.StartNew(()=>Factorial(n-r));
 
+        Task.WaitAll(tn,tn_r);
+        
         var fn = tn.Result;
         var fn_r = tn_r.Result;
 
