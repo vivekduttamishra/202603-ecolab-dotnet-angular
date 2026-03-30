@@ -1,4 +1,5 @@
 using SimpleWeb.Utils;
+using System.Text;
 
 namespace SimpleWeb
 {
@@ -9,93 +10,173 @@ namespace SimpleWeb
             var builder = WebApplication.CreateBuilder(args);
             var app = builder.Build();
 
+            var visits = new Dictionary<string, int>(); //string -> url, int -> visits
 
+            app.UseOnUrl("/admin/stats", async context =>
+            {
+                var str = new StringBuilder("""
+                    <h1>Visit Stats</h1>
+                    <table style="width:80%;border:1px solid gray;text-align:center">
+                        <thead>
+                            <tr>
+                                <th>Url</th>
+                                <th>Visits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    """);
 
-            app
-                .UseOnUrl("/", async context => "<h1>Welcome to The Bank</h1>" )
-                .UseOnUrl("/date",
-                          async context => $"<h1>Today is {DateTime.Now.ToLongDateString()}</h1>" , 
-                          PathMatcher.StartsWith)
-                .UseOnUrl("/time", async context =>
+                foreach (var stat in visits)
                 {
-                    await context.Response.WriteAsync($"<h1>Time Now is {DateTime.Now.ToLongTimeString()}</h1>");
-                }, PathMatcher.Contains);
+                    str.Append($"""
+                        <tr>
+                            <td>{stat.Key}</td>
+                            <td>{stat.Value}</td>
+                        </tr>
+                        """);
+                }
+
+                str.Append("</tbody></table>");
+
+                return str.ToString();
+
+
+            });
+
+            app.UseBefore(async context =>
+            {
+                var path = context.Request.Path.ToString().ToLower();
+
+                if (visits.ContainsKey(path))
+                    visits[path]++;
+                else
+                    visits[path] = 1;
+            });
+
+
+           
+
+            app.UseOnUrl("/", async context =>
+            {
+                
+
+
+                return $"<h1>Welcome to Book's Club</h1>";
+            });
+
+            app.UseOnUrl("/authors", async context =>
+            {
+               
+
+
+                return $"<h1>List of All Authors</h1>";
+            });
+
+            app.UseOnUrl("/authors", async context =>
+            {
+                
+
+
+                var parts = context.Request.Path.ToString().Split('/');
+                var id = parts[parts.Length - 1];
+                return $"<h1>About {id}</h1>";
+            }, PathMatcher.StartsWith);
+
+
+            app.UseOnUrl("/books", async context =>
+            {
+
+               
+
+                return $"<h1>Welcome to Book's Club</h1>";
+            });
+
+            app.UseOnUrl("/books", async context =>
+            {
+               
+                var parts = context.Request.Path.ToString().Split('/');
+                var id = parts[parts.Length - 1];
+                return $"<h1>About The Book {id} </h1>";
+            }, PathMatcher.StartsWith);
 
             
-            
-            //RouteSet03(app);
-            //RouteSet01(app);
-            //HandleMultipleAcctions(app);
 
             app.Run();
         }
 
-        private static void RouteSet03(WebApplication app)
+        private static void RedundantStatsLogic(WebApplication app, Dictionary<string, int> visits)
         {
             app.UseOnUrl("/", async context =>
             {
-                await context.Response.WriteAsync("<h1>Welcome to The Bank</h1>");
-            });
+                var path = context.Request.Path.ToString().ToLower();
 
-            Middlewares.UseOnUrl(app, "/time", async context =>
-            {
-                await context.Response.WriteAsync(DateTime.Now.ToLongTimeString());
-            });
-
-
-            app.Use(async (context, next) =>
-            {
-                if (context.Request.Path == "/date")
-                    await context.Response.WriteAsync($"Today is {DateTime.Now.ToLongDateString()}");
+                if (visits.ContainsKey(path))
+                    visits[path]++;
                 else
-                    await next(context); //call the next item
-            });
-        }
+                    visits[path] = 1;
 
-        private static void HandleMultipleAcctions(WebApplication app)
-        {
-            app.Run(async context =>
+
+                return $"<h1>Welcome to Book's Club</h1>";
+            });
+
+            app.UseOnUrl("/authors", async context =>
             {
-                var path = context.Request.Path.ToString();
+                var path = context.Request.Path.ToString().ToLower();
 
-                switch (path)
-                {
-                    case "/":
-                        await context.Response.WriteAsync("Welcome to 'The Bank' ");
-                        break;
-                    case "/date":
-                        await context.Response.WriteAsync($"Today is {DateTime.Now.ToLongDateString()}");
-                        break;
-                    case "/time":
-                        await context.Response.WriteAsync($"Time now is {DateTime.Now.ToLongTimeString()}");
-                        break;
-                    default:
-                        context.Response.StatusCode = 404;
-                        await context.Response.WriteAsync($"Not Found:  {context.Request.Method} {path}");
-                        break;
-                }
+                if (visits.ContainsKey(path))
+                    visits[path]++;
+                else
+                    visits[path] = 1;
 
+
+                return $"<h1>List of All Authors</h1>";
             });
-        }
 
-        private static void RouteSet01(WebApplication app)
-        {
-            app.Run(async context =>
+            app.UseOnUrl("/authors", async context =>
+            {
+                var path = context.Request.Path.ToString().ToLower();
+
+                if (visits.ContainsKey(path))
+                    visits[path]++;
+                else
+                    visits[path] = 1;
+
+
+                var parts = context.Request.Path.ToString().Split('/');
+                var id = parts[parts.Length - 1];
+                return $"<h1>About {id}</h1>";
+            }, PathMatcher.StartsWith);
+
+
+            app.UseOnUrl("/books", async context =>
             {
 
-                Console.WriteLine($"Request Method: {context.Request.Method}");
-                Console.WriteLine($"Requested URL: {context.Request.Path}");
+                var path = context.Request.Path.ToString().ToLower();
 
-                await context.Response.WriteAsync("Hi There!");
+                if (visits.ContainsKey(path))
+                    visits[path]++;
+                else
+                    visits[path] = 1;
+
+                return $"<h1>Welcome to Book's Club</h1>";
             });
 
-            app.Run(Greet);
+            app.UseOnUrl("/books", async context =>
+            {
+                var path = context.Request.Path.ToString().ToLower();
+
+                if (visits.ContainsKey(path))
+                    visits[path]++;
+                else
+                    visits[path] = 1;
+
+
+                var parts = context.Request.Path.ToString().Split('/');
+                var id = parts[parts.Length - 1];
+                return $"<h1>About The Book {id} </h1>";
+            }, PathMatcher.StartsWith);
         }
 
-        static Task Greet(HttpContext context)
-        {
-            return context.Response.WriteAsync("Hello World!");
-        }
     }
 
    
