@@ -10,59 +10,19 @@ namespace SimpleWeb
 
         private static void ConfigureServices(WebApplicationBuilder builder)
         {
-            builder.Services.AddSingleton<RequestLoggerService>(); //same object for all request
+            //builder.Services.AddSingleton<RequestLoggerService>(); //same object for all request
+
+            builder.Services.AddLoggerService();
+
             builder.Services.AddSingleton<AuthorService>();
             builder.Services.AddTransient<DummyAuthorFiller>(); //created on every request
-        
+
         }
 
         static void ConfigureMiddlewares(WebApplication app)
         {
-            app.UseOnUrl("/admin/stats", async context =>
-          {
-              //var loggerService = new RequestLoggerService();
-              var loggerService = context.RequestServices.GetService<RequestLoggerService>();
 
-              var str = new StringBuilder("""
-                    <h1>Visit Stats</h1>
-                    <table style="width:80%;border:1px solid gray;text-align:center">
-                        <thead>
-                            <tr>
-                                <th>Url</th>
-                                <th>Visits</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                    """);
-
-              var stats = await loggerService.GetStats();
-              foreach (var stat in stats)
-              {
-                  str.Append($"""
-                        <tr>
-                            <td>{stat.Key}</td>
-                            <td>{stat.Value}</td>
-                        </tr>
-                        """);
-              }
-
-              str.Append("</tbody></table>");
-
-              return str.ToString();
-
-
-          });
-
-            app.UseBefore(async context =>
-            {
-                var path = context.Request.Path.ToString().ToLower();
-                //var requestLoggerService = new RequestLoggerService();
-                var requestLoggerService = app.Services.GetService<RequestLoggerService>();
-
-                await requestLoggerService.AddStatsAsync(path);
-
-            });
-
+            app.UseRequestLogger();
 
             app.UseOnUrl("/", async context =>
             {
@@ -73,25 +33,12 @@ namespace SimpleWeb
             });
             app.UseOnUrl("/authors", async context =>
             {
-                var authorService = new AuthorService();
+                //var authorService = new AuthorService();
+                var authorService = context.RequestServices.GetService<AuthorService>();
                 var authors = await authorService.GetAllAuthors();
                 await context.Response.WriteAsJsonAsync(authors);
 
             });
-
-            app.UseOnUrl("/authors", async context =>
-            {
-                var parts = context.Request.Path.ToString().Split('/');
-                var id = int.Parse(parts[parts.Length - 1]);
-                var authorService = new AuthorService();
-                var author = await authorService.GetAuthorById(id);
-                await context.Response.WriteAsJsonAsync(author);
-
-
-
-
-            }, PathMatcher.StartsWith);
-
 
             app.UseOnUrl("/authors/delete", async context =>
              {
@@ -100,7 +47,8 @@ namespace SimpleWeb
 
                  var parts = context.Request.Path.ToString().Split('/');
                  var id = int.Parse(parts[parts.Length - 1]);
-                 var authorService = new AuthorService();
+                 //var authorService = new AuthorService();
+                 var authorService = context.RequestServices.GetService<AuthorService>();
                  await authorService.DeleteAuthor(id);
                  await context.Response.WriteAsJsonAsync(
                      new
@@ -114,6 +62,49 @@ namespace SimpleWeb
 
 
              }, PathMatcher.StartsWith);
+
+            app.UseOnUrl("/authors", async context =>
+            {
+                var parts = context.Request.Path.ToString().Split('/');
+                var id = int.Parse(parts[parts.Length - 1]);
+                //var authorService = new AuthorService();
+                var authorService = context.RequestServices.GetService<AuthorService>();
+                try
+                {
+                    
+                    var author = await authorService.GetAuthorById(id);
+                    await context.Response.WriteAsJsonAsync(author);
+
+                }catch(InvalidIdException ex)
+                {
+                    context.Response.StatusCode=404;
+                    await context.Response.WriteAsJsonAsync(new
+                    {
+                        Error= ex.Message,
+                        Id= ex.Id
+                    });
+                }
+
+            }, PathMatcher.StartsWith);
+
+
+
+            app.UseOnUrl("/admin/add-authors", async context =>
+            {
+                var dataFiller = context.RequestServices.GetService<DummyAuthorFiller>();
+                await dataFiller.AddAuthors();
+
+                await context.Response.WriteAsJsonAsync(new
+                {
+                    Message = "Authors added",
+
+                });
+            });
+
+
+
+
+
 
             app.UseOnUrl("/books", async context =>
             {

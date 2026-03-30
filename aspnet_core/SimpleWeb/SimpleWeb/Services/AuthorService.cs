@@ -13,6 +13,11 @@ public class AuthorService
     int lastId=0;
     List<Author> authors=new List<Author>();
 
+    public AuthorService()
+    {
+        System.Console.WriteLine("Author Service Object Created");
+    }
+
     public async Task<Author> AddAuthor(Author author)
     {
         author.Id=++lastId;
@@ -55,9 +60,10 @@ public class DummyAuthorFiller
     {
        // AddAuthors(service).Wait();
        this.service=service;
+       System.Console.WriteLine("DummyAuthorFiller created with "+service);
     }
 
-    private async Task AddAuthors(AuthorService service)
+    public async Task AddAuthors()
     {
         await service.AddAuthor(new Author(){ Name="Mahatma Gandhi", Biography="The father of the nation, freedom figher and social reformer"});
         await service.AddAuthor(new Author(){ Name="Alexandre Dumas", Biography="One of the greatest french classic author"});
@@ -69,15 +75,14 @@ public class DummyAuthorFiller
 [Serializable]
 public  class InvalidIdException : Exception
 {
-    private int id;
-
+    public int Id{get;private set;}
     public InvalidIdException()
     {
     }
 
     public InvalidIdException(int id): base("Invalid Id")
     {
-        this.id = id;
+        this.Id = id;
     }
 
     public InvalidIdException(string? message) : base(message)
