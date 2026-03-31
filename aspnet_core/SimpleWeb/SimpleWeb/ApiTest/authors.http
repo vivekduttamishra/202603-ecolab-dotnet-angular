@@ -1,0 +1,74 @@
+@base_url = http://localhost:8000/api/authors
+@conntent_type=Content-Type: application/json
+
+
+# Get All Authors
+GET {{base_url}}
+
+
+###
+
+# Get Author By Valid Id
+GET {{base_url}}/1
+
+
+###
+
+# Get Author By Invalid Id
+GET {{base_url}}/40
+
+###
+# @name newAuthor
+# Add New Author
+POST {{base_url}}
+{{conntent_type}}
+
+{
+    "name":"Jeffrey Archer",
+    "biography":"Biography of Jeffrey Archer"
+}
+
+###
+
+@newAuthorId={{newAuthor.response.body.id}}
+
+###
+
+# Get Newly added author
+GET {{base_url}}/{{newAuthorId}}
+
+
+###
+
+# Try Deleting invalid id
+DELETE {{base_url}}/1001
+
+
+###
+
+# Try Deleting new author without role
+DELETE {{base_url}}/{{newAuthorId}}
+
+
+###
+
+# Deleting new author with proper role
+DELETE {{base_url}}/{{newAuthorId}}
+Role: ADMIN
+
+###
+
+# Confirm author has been deleted
+GET {{base_url}}/{{newAuthorId}}
+
+###
+
+# Deleting invalid author with proper role
+DELETE {{base_url}}/{{newAuthorId}}
+Role: ADMIN
+
+###
+
+
+
+
