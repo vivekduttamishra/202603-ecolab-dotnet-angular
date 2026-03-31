@@ -17,94 +17,61 @@ namespace SimpleWeb
             builder.Services.AddSingleton<AuthorService>();
             builder.Services.AddTransient<DummyAuthorFiller>(); //created on every request
 
+            builder.Services.AddControllersWithViews();
+
+
+
+
         }
 
         static void ConfigureMiddlewares(WebApplication app)
         {
 
+            app.UseExceptionHandler<NotAdminException>(403); //default response works
+
+            //needs to send a custom response
+            app.UseExceptionHandler<InvalidIdException>(404, ex => new
+            {
+                Message = ex.Message,
+                Id = ex.Id
+            });
+
+
             app.UseRequestLogger();
 
-            app.UseOnUrl("/", async context =>
+            app.UseBefore(async context =>
             {
-
-
-
-                return $"<h1>Welcome to Book's Club</h1>";
-            });
-            app.UseOnUrl("/authors", async context =>
-            {
-                //var authorService = new AuthorService();
                 var authorService = context.RequestServices.GetService<AuthorService>();
                 var authors = await authorService.GetAllAuthors();
-                await context.Response.WriteAsJsonAsync(authors);
-
-            });
-
-            app.UseOnUrl("/authors/delete", async context =>
-             {
-
-
-
-                 var parts = context.Request.Path.ToString().Split('/');
-                 var id = int.Parse(parts[parts.Length - 1]);
-                 //var authorService = new AuthorService();
-                 var authorService = context.RequestServices.GetService<AuthorService>();
-                 await authorService.DeleteAuthor(id);
-                 await context.Response.WriteAsJsonAsync(
-                     new
-                     {
-                         Message = "Deleted",
-                         Id = id
-                     }
-                 );
-
-
-
-
-             }, PathMatcher.StartsWith);
-
-            app.UseOnUrl("/authors", async context =>
-            {
-                var parts = context.Request.Path.ToString().Split('/');
-                var id = int.Parse(parts[parts.Length - 1]);
-                //var authorService = new AuthorService();
-                var authorService = context.RequestServices.GetService<AuthorService>();
-                try
+                if (authors.Count == 0)
                 {
-                    
-                    var author = await authorService.GetAuthorById(id);
-                    await context.Response.WriteAsJsonAsync(author);
-
-                }catch(InvalidIdException ex)
-                {
-                    context.Response.StatusCode=404;
-                    await context.Response.WriteAsJsonAsync(new
-                    {
-                        Error= ex.Message,
-                        Id= ex.Id
-                    });
+                    var authorFiller = context.RequestServices.GetService<DummyAuthorFiller>();
+                    await authorFiller.AddAuthors();
                 }
-
-            }, PathMatcher.StartsWith);
-
-
-
-            app.UseOnUrl("/admin/add-authors", async context =>
-            {
-                var dataFiller = context.RequestServices.GetService<DummyAuthorFiller>();
-                await dataFiller.AddAuthors();
-
-                await context.Response.WriteAsJsonAsync(new
-                {
-                    Message = "Authors added",
-
-                });
             });
 
 
+            app.UseFileServer();
+
+            //AuthorRoutesWithMap(app);
+
+            //app.UseMvc();
+
+            app.UseRouting();
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}")
+                .WithStaticAssets();
+
+            //app.UseRouting();
+            //app.UseEndpoints(config=>
+            //{
+            //    config.MapControllers();
+            //});
 
 
 
+            //AuthorRoutesV1(app);
 
             app.UseOnUrl("/books", async context =>
             {
@@ -120,10 +87,111 @@ namespace SimpleWeb
                 var parts = context.Request.Path.ToString().Split('/');
                 var id = parts[parts.Length - 1];
                 return $"<h1>About The Book {id} </h1>";
-            }, PathMatcher.StartsWith);
+            }, RequestMatcher.StartsWith);
 
 
         }
+
+        private static void AuthorRoutesWithMap(WebApplication app)
+        {
+            app.MapGet("/authors", async () =>
+            {
+                var authorService = app.Services.GetService<AuthorService>();
+                var authors = await authorService.GetAllAuthors();
+                return authors;
+            });
+
+            app.MapPost("/authors", async (Author author) =>
+            {
+
+                var service = app.Services.GetService<AuthorService>();
+                var result = await service.AddAuthor(author);
+                return result;
+            });
+
+            app.MapGet("/authors/{id:int}", async (int id) =>
+            {
+                var service = app.Services.GetService<AuthorService>();
+                var author = await service.GetAuthorById(id);
+
+                return author;
+
+            });
+
+            app.MapDelete("/authors/{id:int}", async (int id, HttpContext context) =>
+            {
+                if (context.Request.Headers["Role"] != "ADMIN")
+                    throw new NotAdminException("You Must be ADMIN to delete Author");
+                var service = app.Services.GetService<AuthorService>();
+                await service.DeleteAuthor(id);
+                return new
+                {
+                    Deleted = id
+                };
+            });
+        }
+
+        private static void AuthorRoutesV1(WebApplication app)
+        {
+            app.UseOnUrl("/authors", async context =>
+            {
+                //var authorService = new AuthorService();
+                var authorService = context.RequestServices.GetService<AuthorService>();
+                var authors = await authorService.GetAllAuthors();
+                await context.Response.WriteAsJsonAsync(authors);
+
+            });
+
+            app.UseOnUrl("/authors", async context =>
+            {
+
+                //checking the header for proper roles
+                var role = context.Request.Headers["Role"];
+                if (role != "ADMIN")
+                    throw new NotAdminException("Only Admin can delete an author");
+
+                //if(!context.Request.Path.ToString().Contains("ADMIN"))
+                var parts = context.Request.Path.ToString().Split('/');
+                var id = int.Parse(parts[parts.Length - 1]);
+                //var authorService = new AuthorService();
+                var authorService = context.RequestServices.GetService<AuthorService>();
+                await authorService.DeleteAuthor(id);
+                await context.Response.WriteAsJsonAsync(
+                    new
+                    {
+                        Message = "Deleted",
+                        Id = id
+                    }
+                );
+            }, RequestMatcher.All(RequestMatcher.StartsWith, RequestMatcher.Method("delete")));
+
+            app.UseOnUrl("/authors", async context =>
+            {
+                var parts = context.Request.Path.ToString().Split("/");
+                var id = int.Parse(parts[parts.Length - 1]);
+                //var authorService = new AuthorService();
+                var authorService = context.RequestServices.GetService<AuthorService>();
+
+                var author = await authorService.GetAuthorById(id);
+                await context.Response.WriteAsJsonAsync(author);
+
+
+
+            }, RequestMatcher.StartsWith);
+
+            app.UseOnUrl("/admin/add-authors", async context =>
+            {
+                var dataFiller = context.RequestServices.GetService<DummyAuthorFiller>();
+                await dataFiller.AddAuthors();
+
+                await context.Response.WriteAsJsonAsync(new
+                {
+                    Message = "Authors added",
+
+                });
+            });
+        }
+
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -239,7 +307,7 @@ namespace SimpleWeb
                 var parts = context.Request.Path.ToString().Split('/');
                 var id = parts[parts.Length - 1];
                 return $"<h1>About {id}</h1>";
-            }, PathMatcher.StartsWith);
+            }, RequestMatcher.StartsWith);
 
 
             app.UseOnUrl("/books", async context =>
@@ -268,10 +336,24 @@ namespace SimpleWeb
                 var parts = context.Request.Path.ToString().Split('/');
                 var id = parts[parts.Length - 1];
                 return $"<h1>About The Book {id} </h1>";
-            }, PathMatcher.StartsWith);
+            }, RequestMatcher.StartsWith);
         }
 
     }
 
+    [Serializable]
+    internal class NotAdminException : Exception
+    {
+        public NotAdminException()
+        {
+        }
 
+        public NotAdminException(string? message) : base(message)
+        {
+        }
+
+        public NotAdminException(string? message, Exception? innerException) : base(message, innerException)
+        {
+        }
+    }
 }

@@ -15,11 +15,11 @@ namespace SimpleWeb
                 .UseOnUrl("/", async context => "<h1>Welcome to The Bank</h1>" )
                 .UseOnUrl("/date",
                           async context => $"<h1>Today is {DateTime.Now.ToLongDateString()}</h1>" , 
-                          PathMatcher.StartsWith)
+                          RequestMatcher.StartsWith)
                 .UseOnUrl("/time", async context =>
                 {
                     await context.Response.WriteAsync($"<h1>Time Now is {DateTime.Now.ToLongTimeString()}</h1>");
-                }, PathMatcher.Contains);
+                }, RequestMatcher.Contains);
 
             
             

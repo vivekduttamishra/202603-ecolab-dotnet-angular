@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B95B71E4-E841-46FE-A5AA-1BD61DA5B218}|SimpleWeb\\SimpleWeb.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\simpleweb\\simpleweb\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B95B71E4-E841-46FE-A5AA-1BD61DA5B218}|SimpleWeb\\SimpleWeb.csproj|solutionrelative:simpleweb\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D3C7B24-1E33-425B-A1F4-3C4B412AB14E}|WebApplication1\\WebApplication1.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\simpleweb\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D3C7B24-1E33-425B-A1F4-3C4B412AB14E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B95B71E4-E841-46FE-A5AA-1BD61DA5B218}|SimpleWeb\\SimpleWeb.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\simpleweb\\simpleweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B95B71E4-E841-46FE-A5AA-1BD61DA5B218}|SimpleWeb\\SimpleWeb.csproj|solutionrelative:simpleweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D3C7B24-1E33-425B-A1F4-3C4B412AB14E}|WebApplication1\\WebApplication1.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\simpleweb\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D3C7B24-1E33-425B-A1F4-3C4B412AB14E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B95B71E4-E841-46FE-A5AA-1BD61DA5B218}|SimpleWeb\\SimpleWeb.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\simpleweb\\simpleweb\\simpleweb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B95B71E4-E841-46FE-A5AA-1BD61DA5B218}|SimpleWeb\\SimpleWeb.csproj|solutionrelative:simpleweb\\simpleweb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B95B71E4-E841-46FE-A5AA-1BD61DA5B218}|SimpleWeb\\SimpleWeb.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\simpleweb\\simpleweb\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B95B71E4-E841-46FE-A5AA-1BD61DA5B218}|SimpleWeb\\SimpleWeb.csproj|solutionrelative:simpleweb\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B95B71E4-E841-46FE-A5AA-1BD61DA5B218}|SimpleWeb\\SimpleWeb.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\simpleweb\\simpleweb\\wwwroot\\hello.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B95B71E4-E841-46FE-A5AA-1BD61DA5B218}|SimpleWeb\\SimpleWeb.csproj|solutionrelative:simpleweb\\wwwroot\\hello.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B95B71E4-E841-46FE-A5AA-1BD61DA5B218}|SimpleWeb\\SimpleWeb.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\simpleweb\\simpleweb\\utils\\middlewares.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,34 +42,112 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T07:38:01.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "WebApplication1\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwBoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T07:34:18.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthorsController.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\Controllers\\AuthorsController.cs",
+              "RelativeDocumentMoniker": "SimpleWeb\\Controllers\\AuthorsController.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\Controllers\\AuthorsController.cs",
+              "RelativeToolTip": "SimpleWeb\\Controllers\\AuthorsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T07:30:16.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SimpleWeb",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\SimpleWeb.csproj",
+              "RelativeDocumentMoniker": "SimpleWeb\\SimpleWeb.csproj",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\SimpleWeb.csproj",
+              "RelativeToolTip": "SimpleWeb\\SimpleWeb.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-31T07:29:46.149Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "index.html",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "SimpleWeb\\wwwroot\\index.html",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\wwwroot\\index.html",
+              "RelativeToolTip": "SimpleWeb\\wwwroot\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-03-31T07:17:36.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "hello.html",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\wwwroot\\hello.html",
+              "RelativeDocumentMoniker": "SimpleWeb\\wwwroot\\hello.html",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\wwwroot\\hello.html",
+              "RelativeToolTip": "SimpleWeb\\wwwroot\\hello.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-03-31T07:08:03.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\Program.cs",
               "RelativeDocumentMoniker": "SimpleWeb\\Program.cs",
               "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\Program.cs",
               "RelativeToolTip": "SimpleWeb\\Program.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAcAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwBMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-27T10:31:27.222Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Middlewares.cs",
               "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\Utils\\Middlewares.cs",
               "RelativeDocumentMoniker": "SimpleWeb\\Utils\\Middlewares.cs",
               "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\SimpleWeb\\SimpleWeb\\Utils\\Middlewares.cs",
               "RelativeToolTip": "SimpleWeb\\Utils\\Middlewares.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAswFgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-30T05:20:19.404Z",
               "EditorCaption": ""
