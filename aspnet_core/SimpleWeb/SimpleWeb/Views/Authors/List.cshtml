@@ -1,0 +1,38 @@
+@using ConceptArchitect.BookManagement
+@model List<Author>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Book's Web</h1>
+    <hr>
+    <h2>Our Author List</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var author in Model)
+            {
+                <tr>
+                    <td>@author.Name</td>
+                    <td>
+                        <a href="/authors/details/@author.Id">Details</a>
+                        <a href="/authors/delete/@author.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html> 

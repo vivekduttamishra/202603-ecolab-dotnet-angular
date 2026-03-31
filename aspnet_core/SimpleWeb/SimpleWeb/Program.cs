@@ -39,15 +39,24 @@ namespace SimpleWeb
 
             app.UseRequestLogger();
 
+            int requestCount=0;
+
             app.UseBefore(async context =>
             {
                 var authorService = context.RequestServices.GetService<AuthorService>();
                 var authors = await authorService.GetAllAuthors();
-                if (authors.Count == 0)
+                
+               
+
+                if (Interlocked.Increment(ref requestCount)==1)
                 {
-                    var authorFiller = context.RequestServices.GetService<DummyAuthorFiller>();
+                    System.Console.WriteLine(context.Request.Path);
+
+                    var authorFiller=context.RequestServices.GetService<DummyAuthorFiller>();
                     await authorFiller.AddAuthors();
+                    
                 }
+
             });
 
 
@@ -57,17 +66,20 @@ namespace SimpleWeb
 
             //app.UseMvc();
 
-            app.UseRouting();
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}")
-                .WithStaticAssets();
+            app.UseRouting(); 
+            
+            app.MapControllers();  //use attributed route for API
+            
+            //use conventional route for MVC
+            app.MapDefaultControllerRoute(); //{controller}/{action}/{id}
 
-            //app.UseRouting();
-            //app.UseEndpoints(config=>
-            //{
-            //    config.MapControllers();
-            //});
+
+            // app.MapControllerRoute(
+            //     name: "default",
+            //     pattern: "{controller=Home}/{action=Index}/{id?}")
+            //     .WithStaticAssets();
+
+
 
 
 
