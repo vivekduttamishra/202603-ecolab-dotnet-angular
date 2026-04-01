@@ -2,9 +2,24 @@ namespace ConceptArchitect.Finance;
 
 using System;
 using ConceptArchitect.Finance.Exceptions;
+using ConceptArchitect.Finance.Repositories;
+using ConceptArchitect.Finance.Repositories.ArrayRepository;
 
 public class AccountInfo
 {
+    public AccountInfo(BankAccount account)
+    {
+        AccountType=account.GetType().Name;
+        AccountNumber=account.AccountNumber;
+        Name=account.Name;
+        Balance=account.Balance;
+    }
+
+    public AccountInfo()
+    {
+        
+    }
+
     public string AccountType { get; set; }
     public int AccountNumber { get; set; }  
     public string Name { get; set; }
@@ -28,12 +43,18 @@ public class Bank
 
     int lastId = 0;
 
-    BankAccount[] accounts = new BankAccount[50]; //only 50 possible for now.
+    //ArrayAccountRepository repository=new ArrayAccountRepository();
+    //ListAccountRepository repository=new ListAccountRepository();
 
-    public Bank(string name, double interestRate)
+    IAccountRepository repository;
+
+
+
+    public Bank(string name, double interestRate, IAccountRepository repository)
     {
         Name = name;
         InterestRate = interestRate;
+        this.repository=repository;
 
         accountBuilders["savings"]= (accountNumber, name, password, amount)=> new SavingsAccount(accountNumber,name,password, amount);
         accountBuilders["current"]= (accountNumber, name, password, amount)=> new CurrentAccount(accountNumber,name,password, amount);
@@ -48,6 +69,7 @@ public class Bank
 
     Dictionary<string, Func<int,string,string,double,BankAccount>> accountBuilders=new Dictionary<string, Func<int,string,string,double,BankAccount>>();
 
+    
 
     public int OpenAccount(string accountType, string name, string password, double amount)
     {
@@ -66,89 +88,106 @@ public class Bank
 
 
         //step 3. add the account to accounts collection
-        accounts[accountNumber] = account;
+        //accounts[accountNumber] = account;
+        repository.AddAccount(account);
+        repository.Save(account);
 
         //step 4. return 
         return accountNumber;
     }
 
-    BankAccount GetAccount(int accountNumber)
-    {
-        if(accountNumber<1 || accountNumber>lastId || accounts[accountNumber]==null)
-            throw new InvalidAccountException(accountNumber);
-        else
-            return accounts[accountNumber];
-    }
+   
 
     public double CloseAccount(int accountNumber, string password)
     {
         //step1 get the account
        
-        var account = GetAccount(accountNumber);
+        //var account = GetAccount(accountNumber);
+        var account = repository.GetById(accountNumber);
+
         account.Authenticate(password);
-        accounts[accountNumber] = null; //removed
+        //accounts[accountNumber] = null; //removed
+
+        repository.Remove(accountNumber);
+        repository.Save(null); //save everything
+
         return account.Balance;
     }
 
     public void Withdraw(int accountNumber, int amount, string password)
     {
         
-        var account= GetAccount(accountNumber);
+        //var account= GetAccount(accountNumber);
+        var account = repository.GetById(accountNumber);
 
         account.Withdraw(amount,password);
+        repository.Save(account);
     }
 
 
     public void Deposit(int accountNumber, int amount)
     {
-        var account = GetAccount(accountNumber);
+        //var account = GetAccount(accountNumber);
+        var account = repository.GetById(accountNumber);
         account.Deposit(amount);
+        repository.Save(account);
     }
 
     public void Transfer(int sourceAccountNumber, double amount, string password, int targetAccountNumber)
     {
         //DO IT
-        var sourceAccount = GetAccount(sourceAccountNumber);
+        var sourceAccount = repository.GetById(sourceAccountNumber);
 
-        var targetAccount=GetAccount(targetAccountNumber);
+        var targetAccount=repository.GetById(targetAccountNumber);
+
 
         sourceAccount.Withdraw(amount,password);
 
         targetAccount.Deposit(amount);
+        repository.Save(sourceAccount);
+        repository.Save(targetAccount);
     }
 
     public int CreditInterest()
     {
         //DO IT: Pass one month interst to each account
         int creditedAccounts=0;
-        for(int i=1;i<=lastId;i++)
+        // for(int i=1;i<=lastId;i++)
+        // {
+        //     if(accounts[i]!=null){
+        //         accounts[i].CreditInterest(InterestRate);
+        //         creditedAccounts++;
+        //     }
+        // }
+
+        var accounts = repository.GetAll();
+        var count=0;
+        foreach(var account  in accounts)
         {
-            if(accounts[i]!=null){
-                accounts[i].CreditInterest(InterestRate);
-                creditedAccounts++;
-            }
+            
+            account.CreditInterest(InterestRate);
+            repository.Save(account);
+            count++;
         }
 
-        return creditedAccounts;
+        return count;
     }
 
-    public string GetAccounts()
+    public List<AccountInfo> GetAccounts()
     {
         //DO IT: RETURN INFORMATION ABOUT EACH ACCOUNT
-        return null;
+        var info= new List<AccountInfo>();
+        foreach(var account in repository.GetAll())
+            info.Add(new AccountInfo(account));
+        
+        return info;
     }
 
    public AccountInfo  GetInfo(int accountNumber, string password)
     {
-        var account = GetAccount(accountNumber);
+        var account = repository.GetById(accountNumber);
         account.Authenticate(password);
-        return new AccountInfo
-        {
-            AccountType= account.GetType().Name,
-            AccountNumber=account.AccountNumber,
-            Name= account.Name,
-            Balance=account.Balance            
-        };
+        return new AccountInfo(account);
 
     }
 }

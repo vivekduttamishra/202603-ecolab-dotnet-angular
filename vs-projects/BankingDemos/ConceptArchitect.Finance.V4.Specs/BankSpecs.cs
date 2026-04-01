@@ -1,5 +1,6 @@
 using System.Runtime.Serialization;
 using ConceptArchitect.Finance.Exceptions;
+using ConceptArchitect.Finance.Repositories.ArrayRepository;
 
 namespace ConceptArchitect.Finance.V4.Specs;
 
@@ -13,7 +14,7 @@ public class BankSpecs
     int sa, ca, oda;
     public BankSpecs()
     {
-        bank=new Bank("Bank Name",interestRate);
+        bank=new Bank("Bank Name",interestRate, new ListAccountRepository());
 
         sa= bank.OpenAccount("Savings","Test Name",password,amount);
         ca= bank.OpenAccount("Current","Test Name",password,amount);
@@ -183,6 +184,13 @@ public class BankSpecs
     }
 
 
+    [Fact()]
+    public void CanCreateMultipleAccounts()
+    {
+        
+        for(var i=0;i<1000;i++)
+            bank.OpenAccount("Savings","Test Account", password, amount);
+    }
 
 
 

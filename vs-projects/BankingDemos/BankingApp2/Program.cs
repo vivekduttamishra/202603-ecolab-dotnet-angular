@@ -1,13 +1,14 @@
 ﻿using System;
 using ConceptArchitect.Finance;
 using ConceptArchitect.Finance.Firmeware;
+using ConceptArchitect.Finance.Repositories.ArrayRepository;
 class Program
 {
     static void Main()
     {
 
-        var iciciBank = new Bank("ICICI", 12);
-        var idfcBank = new Bank("IDFC", 12);
+        var iciciBank = new Bank("ICICI", 12, new ListAccountRepository());
+        var idfcBank = new Bank("IDFC", 12, new ArrayAccountRepository());
 
         var a1 = iciciBank.OpenAccount("Savings", "Vivek Dutta Mishra", "p@ss", 20000);
         var a2 = iciciBank.OpenAccount("Current", "Sanjay Mall", "p@ss", 20000);
