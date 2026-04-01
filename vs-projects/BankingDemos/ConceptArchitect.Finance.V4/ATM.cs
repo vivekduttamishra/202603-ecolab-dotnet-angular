@@ -130,7 +130,7 @@ public class ATM
     private void HandleShowInfo()
     {
         var info = bank.GetInfo(accountNumber, password);
-        PrintInfo(info);
+        PrintInfo(info.ToString());
     }
 
     private void HandleTransfer()

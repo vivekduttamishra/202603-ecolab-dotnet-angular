@@ -74,6 +74,6 @@ public abstract class BankAccount
 
     public override string ToString()
     {
-        return $"Account Number: {AccountNumber}\tName={Name}\tBalance={Balance}";
+        return $"{this.GetType().Name} Number: {AccountNumber}\tName={Name}\tBalance={Balance}";
     }
 }

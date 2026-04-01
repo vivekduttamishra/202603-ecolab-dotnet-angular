@@ -1,4 +1,4 @@
-namespace ConceptArchitect.Finance;
+namespace ConceptArchitect.Finance.V4.Specs;
 
 using ConceptArchitect.Finance;
 
@@ -18,7 +18,8 @@ public class CurrentAccountSpec
     [Fact]
     public void CurrentAccountShouldBeABankAccount()
     {
-        Assert.IsType(typeof(CurrentAccount), account);
+        Assert.IsAssignableFrom<BankAccount>(account);
+
         Assert.True(account is BankAccount);
     }
 
