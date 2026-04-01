@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\ConceptArchitect.Finance.Repositories.Sql\ConceptArchitect.Finance.Repositories.Sql.csproj" />
     <ProjectReference Include="..\ConceptArchitect.Finance.V4\ConceptArchitect.Finance.V4.csproj" />
   </ItemGroup>
 

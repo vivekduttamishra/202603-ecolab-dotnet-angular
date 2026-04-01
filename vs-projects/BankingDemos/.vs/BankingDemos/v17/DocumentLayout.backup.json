@@ -3,20 +3,29 @@
   "WorkspaceRootPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{018C6A09-79B6-4BBE-8230-240E2F076DF1}|ConceptArchitect.Finance.V3.Specs\\ConceptArchitect.Finance.V3.Specs.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\conceptarchitect.finance.v3.specs\\savingsaccountspec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{018C6A09-79B6-4BBE-8230-240E2F076DF1}|ConceptArchitect.Finance.V3.Specs\\ConceptArchitect.Finance.V3.Specs.csproj|solutionrelative:conceptarchitect.finance.v3.specs\\savingsaccountspec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{762FE1AF-A879-47F8-BD3E-42A6D6BCDB9E}|ConceptArchitect.Finance.Repositories.Sql\\ConceptArchitect.Finance.Repositories.Sql.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\conceptarchitect.finance.repositories.sql\\sqlaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{762FE1AF-A879-47F8-BD3E-42A6D6BCDB9E}|ConceptArchitect.Finance.Repositories.Sql\\ConceptArchitect.Finance.Repositories.Sql.csproj|solutionrelative:conceptarchitect.finance.repositories.sql\\sqlaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42DD5B3D-CB6B-407B-9680-320B592E7AB0}|ConceptArchitect.Finance.V3\\ConceptArchitect.Finance.V3.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\conceptarchitect.finance.v3\\savingsaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42DD5B3D-CB6B-407B-9680-320B592E7AB0}|ConceptArchitect.Finance.V3\\ConceptArchitect.Finance.V3.csproj|solutionrelative:conceptarchitect.finance.v3\\savingsaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vivek\\AppData\\Local\\Temp\\qwvir1db..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42DD5B3D-CB6B-407B-9680-320B592E7AB0}|ConceptArchitect.Finance.V3\\ConceptArchitect.Finance.V3.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\conceptarchitect.finance.v3\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42DD5B3D-CB6B-407B-9680-320B592E7AB0}|ConceptArchitect.Finance.V3\\ConceptArchitect.Finance.V3.csproj|solutionrelative:conceptarchitect.finance.v3\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87C4B595-0A5F-48F7-8B66-474313F643E2}|ConceptArchitect.Finance.V4\\ConceptArchitect.Finance.V4.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\conceptarchitect.finance.v4\\atm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C4B595-0A5F-48F7-8B66-474313F643E2}|ConceptArchitect.Finance.V4\\ConceptArchitect.Finance.V4.csproj|solutionrelative:conceptarchitect.finance.v4\\atm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{018C6A09-79B6-4BBE-8230-240E2F076DF1}|ConceptArchitect.Finance.V3.Specs\\ConceptArchitect.Finance.V3.Specs.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\conceptarchitect.finance.v3.specs\\bankaccountspec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{018C6A09-79B6-4BBE-8230-240E2F076DF1}|ConceptArchitect.Finance.V3.Specs\\ConceptArchitect.Finance.V3.Specs.csproj|solutionrelative:conceptarchitect.finance.v3.specs\\bankaccountspec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0949F2C5-CC80-44C3-ADD3-F1C5A9011EEA}|BankingApp2\\BankingApp2.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\bankingapp2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0949F2C5-CC80-44C3-ADD3-F1C5A9011EEA}|BankingApp2\\BankingApp2.csproj|solutionrelative:bankingapp2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C4B595-0A5F-48F7-8B66-474313F643E2}|ConceptArchitect.Finance.V4\\ConceptArchitect.Finance.V4.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\bankingdemos\\conceptarchitect.finance.v4\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C4B595-0A5F-48F7-8B66-474313F643E2}|ConceptArchitect.Finance.V4\\ConceptArchitect.Finance.V4.csproj|solutionrelative:conceptarchitect.finance.v4\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vivek\\AppData\\Local\\Temp\\qwvir1db..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vivek\\AppData\\Local\\Temp\\qwvir1db..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +35,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BankAccountSpec.cs",
-              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3.Specs\\BankAccountSpec.cs",
-              "RelativeDocumentMoniker": "ConceptArchitect.Finance.V3.Specs\\BankAccountSpec.cs",
-              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3.Specs\\BankAccountSpec.cs",
-              "RelativeToolTip": "ConceptArchitect.Finance.V3.Specs\\BankAccountSpec.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAYwHwAAAArAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ATM.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\ATM.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Finance.V4\\ATM.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\ATM.cs",
+              "RelativeToolTip": "ConceptArchitect.Finance.V4\\ATM.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAqwJAAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T11:40:13.454Z",
+              "WhenOpened": "2026-04-01T11:01:55.716Z",
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BankAccount.cs",
-              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3\\BankAccount.cs",
-              "RelativeDocumentMoniker": "ConceptArchitect.Finance.V3\\BankAccount.cs",
-              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3\\BankAccount.cs",
-              "RelativeToolTip": "ConceptArchitect.Finance.V3\\BankAccount.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwBgAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Bank.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\Bank.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Finance.V4\\Bank.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\Bank.cs",
+              "RelativeToolTip": "ConceptArchitect.Finance.V4\\Bank.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAIwLsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T11:36:08.814Z",
+              "WhenOpened": "2026-04-01T10:57:47.724Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SavingsAccount.cs",
-              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3\\SavingsAccount.cs",
-              "RelativeDocumentMoniker": "ConceptArchitect.Finance.V3\\SavingsAccount.cs",
-              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3\\SavingsAccount.cs",
-              "RelativeToolTip": "ConceptArchitect.Finance.V3\\SavingsAccount.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T11:23:49.017Z",
+              "Title": "SQLQuery3.sql ",
+              "DocumentMoniker": "C:\\Users\\vivek\\AppData\\Local\\Temp\\qwvir1db..sql",
+              "ToolTip": "SQLQuery3.sql *",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-04-01T10:52:46.444Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SavingsAccountSpec.cs",
-              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3.Specs\\SavingsAccountSpec.cs",
-              "RelativeDocumentMoniker": "ConceptArchitect.Finance.V3.Specs\\SavingsAccountSpec.cs",
-              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V3.Specs\\SavingsAccountSpec.cs",
-              "RelativeToolTip": "ConceptArchitect.Finance.V3.Specs\\SavingsAccountSpec.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAowDkAAAAyAAAAAAAAAA==",
+              "Title": "SqlAccountRepository.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.Repositories.Sql\\SqlAccountRepository.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Finance.Repositories.Sql\\SqlAccountRepository.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.Repositories.Sql\\SqlAccountRepository.cs*",
+              "RelativeToolTip": "ConceptArchitect.Finance.Repositories.Sql\\SqlAccountRepository.cs*",
+              "ViewState": "AgIAALkAAAAAAAAAAAAMwMUAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T11:22:15.488Z",
+              "WhenOpened": "2026-04-01T10:35:47.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\BankingApp2\\Program.cs",
+              "RelativeDocumentMoniker": "BankingApp2\\Program.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\BankingApp2\\Program.cs",
+              "RelativeToolTip": "BankingApp2\\Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T10:06:17.173Z",
               "EditorCaption": ""
             }
           ]

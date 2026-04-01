@@ -54,6 +54,18 @@ public class ATM
         {
             choice = keyboard.GetInt("1. Open Account 2. Credit Interest 3. Show All Accounts 4. Shutdown 0. Exit");
             //DO IT YOURSELF
+            switch (choice)
+            {
+                case 1:
+                    var accountType = keyboard.GetString("Account Type?");
+                    var name = keyboard.GetString("Name");
+                    var password= keyboard.GetString("Password");
+                    var balance = keyboard.GetInt("balance");
+
+                    var accountNumber=bank.OpenAccount(accountType, name, password, balance);
+                    PrintInfo($"Your account number is : {accountNumber}");
+                    break;
+            }
 
         } while (choice != 0);
     }
@@ -130,7 +142,7 @@ public class ATM
     private void HandleShowInfo()
     {
         var info = bank.GetInfo(accountNumber, password);
-        PrintInfo(info.ToString());
+        PrintInfo($"Account Name: {info.Name} Account Balance: {info.Balance}");
     }
 
     private void HandleTransfer()

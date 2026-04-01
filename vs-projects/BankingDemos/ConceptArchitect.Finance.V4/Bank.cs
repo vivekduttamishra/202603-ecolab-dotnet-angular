@@ -56,9 +56,9 @@ public class Bank
         InterestRate = interestRate;
         this.repository=repository;
 
-        accountBuilders["savings"]= (accountNumber, name, password, amount)=> new SavingsAccount(accountNumber,name,password, amount);
-        accountBuilders["current"]= (accountNumber, name, password, amount)=> new CurrentAccount(accountNumber,name,password, amount);
-        accountBuilders["od"]= (accountNumber, name, password, amount)=> new OverdraftAccount(accountNumber,name,password, amount);
+        accountBuilders["SavingsAccount"]= (accountNumber, name, password, amount)=> new SavingsAccount(accountNumber,name,password, amount);
+        accountBuilders["CurrentAccount"]= (accountNumber, name, password, amount)=> new CurrentAccount(accountNumber,name,password, amount);
+        accountBuilders["OverdraftAccount"]= (accountNumber, name, password, amount)=> new OverdraftAccount(accountNumber,name,password, amount);
 
     }
 
@@ -79,10 +79,10 @@ public class Bank
 
         //step 2. create account
 
-        if(!accountBuilders.ContainsKey(accountType.ToLower()))
+        if(!accountBuilders.ContainsKey(accountType))
             throw new BankingException(0, "Invalid Account Type: "+accountType);
 
-        var accountBuilder = accountBuilders[accountType.ToLower()];
+        var accountBuilder = accountBuilders[accountType];
         //var account = new CurrentAccount(accountNumber, name, password, amount);
         var account =accountBuilder(accountNumber, name, password, amount);
 
@@ -90,10 +90,10 @@ public class Bank
         //step 3. add the account to accounts collection
         //accounts[accountNumber] = account;
         repository.AddAccount(account);
-        repository.Save(account);
+        //repository.Save(account);
 
         //step 4. return 
-        return accountNumber;
+        return account.AccountNumber;
     }
 
    

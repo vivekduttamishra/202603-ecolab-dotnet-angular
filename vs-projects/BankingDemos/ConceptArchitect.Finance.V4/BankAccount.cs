@@ -20,7 +20,7 @@ public abstract class BankAccount
 
 
     //public string AccountType { get; }
-    public int AccountNumber { get; }
+    public int AccountNumber { get; set; }
     public string Name { get; }
     public string Password { get; private set; }
 
