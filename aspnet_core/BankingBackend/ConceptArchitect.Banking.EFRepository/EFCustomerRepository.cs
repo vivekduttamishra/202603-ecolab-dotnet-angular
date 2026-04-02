@@ -1,4 +1,5 @@
 ﻿using ConceptArchitect.Utils;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,48 +10,70 @@ namespace ConceptArchitect.Banking.EFRepository
 {
     public class EFCustomerRepository : IRepository<Customer, String>
     {
-        public Task<Customer> Add(Customer customer)
+        BankingContext context;
+        public EFCustomerRepository(BankingContext context)
         {
-            throw new NotImplementedException();
+            this.context = context;
+        }
+
+
+        public async Task<Customer> Add(Customer customer)
+        {
+            context.Customers.Add(customer);
+            await context.SaveChangesAsync();
+            return customer;
         }
 
        
 
-        public Task<IEnumerable<Customer>> FindAll(Func<Customer, bool> matcher)
+        public async Task<IEnumerable<Customer>> FindAll(Func<Customer, bool> matcher)
         {
-            throw new NotImplementedException();
+            var customers = await (from customer in context.Customers
+                             where matcher(customer)
+                             select customer).ToListAsync();
+
+            return customers;
         }
 
-        public Task<Customer> FindOne(Func<Customer, bool> matcher)
+        public async Task<Customer> FindOne(Func<Customer, bool> matcher)
         {
-            throw new NotImplementedException();
+            return await context.Customers.FirstOrDefaultAsync(c => matcher(c));
         }
 
-        public Task<IEnumerable<Customer>> GetAll()
+        public async Task<IEnumerable<Customer>> GetAll()
         {
-            throw new NotImplementedException();
+            return await context.Customers.ToListAsync();
         }
 
-        public Task<Customer> GetById(string Id)
+        public async Task<Customer> GetById(string id)
         {
-            throw new NotImplementedException();
+            var customer= await context.Customers.FirstOrDefaultAsync(c => c.Email == id);
+            if (customer == null)
+                throw new InvalidIdException<string>(id);
+
+            return customer;
         }
 
-        public Task Save()
+        public async Task Save()
         {
-            throw new NotImplementedException();
+            await context.SaveChangesAsync();
         }
 
       
 
-        public Task<Customer> Update(Customer customer, Action<Customer, Customer> mergeOldNew)
+        public async Task<Customer> Update(Customer customer, Action<Customer, Customer> mergeOldNew)
         {
-            throw new NotImplementedException();
+            var oldCustomer = await GetById(customer.Email);
+            mergeOldNew(oldCustomer, customer);
+            await context.SaveChangesAsync();
+            return oldCustomer;
         }
 
-        public async Task DeleteById(string Id)
+        public async Task DeleteById(string id)
         {
-            
+            var customer = await GetById(id);
+            context.Customers.Remove(customer);
+            await context.SaveChangesAsync();
         }
     }
 }

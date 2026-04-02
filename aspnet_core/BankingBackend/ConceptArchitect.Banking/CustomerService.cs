@@ -10,6 +10,10 @@ namespace ConceptArchitect.Banking
     public  class CustomerService
     {
         IRepository<Customer, string> repository;
+        public CustomerService(IRepository<Customer,string> repository)
+        {
+            this.repository = repository;
+        }
 
         public async Task<Customer> AddCustomer(Customer customer) 
         {
@@ -17,6 +21,11 @@ namespace ConceptArchitect.Banking
             customer = await repository.Add(customer);
             await repository.Save();
             return customer;
+        }
+
+        public async Task<IEnumerable<Customer>> GetAllCustomers()
+        {
+            return await repository.GetAll();
         }
 
         public async Task ActivateCustomer(string email, bool isActive=true)

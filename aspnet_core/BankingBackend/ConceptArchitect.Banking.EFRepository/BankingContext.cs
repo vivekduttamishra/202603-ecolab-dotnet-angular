@@ -9,11 +9,9 @@ namespace ConceptArchitect.Banking.EFRepository
 {
     public class BankingContext : DbContext
     {
-        string connectionString= "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking.EFRepository\\EFBanking.mdf;Integrated Security=True";
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public BankingContext(DbContextOptions<BankingContext> options): base(options)
         {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(connectionString);
+
         }
 
         public DbSet<Customer> Customers { get; set; }

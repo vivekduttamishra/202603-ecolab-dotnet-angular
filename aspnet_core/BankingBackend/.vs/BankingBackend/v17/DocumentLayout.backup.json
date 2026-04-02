@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B0F223B4-BC00-468A-AE24-0A7253D5BCBD}|TestBanking\\TestBanking.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\testbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0F223B4-BC00-468A-AE24-0A7253D5BCBD}|TestBanking\\TestBanking.csproj|solutionrelative:testbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86F07FB3-8E3A-48D1-97C7-173B4A3EC1B1}|ConceptArchitect.Banking\\ConceptArchitect.Banking.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.banking\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86F07FB3-8E3A-48D1-97C7-173B4A3EC1B1}|ConceptArchitect.Banking\\ConceptArchitect.Banking.csproj|solutionrelative:conceptarchitect.banking\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.utils\\input.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|solutionrelative:conceptarchitect.utils\\input.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\bankingapiserver\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|solutionrelative:bankingapiserver\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EDEE7B4-E3CC-400D-9907-48DB43F9C931}|ConceptArchitect.Banking.EFRepository\\ConceptArchitect.Banking.EFRepository.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.banking.efrepository\\efcustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EDEE7B4-E3CC-400D-9907-48DB43F9C931}|ConceptArchitect.Banking.EFRepository\\ConceptArchitect.Banking.EFRepository.csproj|solutionrelative:conceptarchitect.banking.efrepository\\efcustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\bankingapiserver\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|solutionrelative:bankingapiserver\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\bankingapiserver\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|solutionrelative:bankingapiserver\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\bankingapiserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|solutionrelative:bankingapiserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0F223B4-BC00-468A-AE24-0A7253D5BCBD}|TestBanking\\TestBanking.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\testbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0F223B4-BC00-468A-AE24-0A7253D5BCBD}|TestBanking\\TestBanking.csproj|solutionrelative:testbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,36 +38,101 @@
       "DocumentGroups": [
         {
           "DockedWidth": 230,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "BankingApiServer\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\Properties\\launchSettings.json",
+              "RelativeToolTip": "BankingApiServer\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-02T11:56:16.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking\\CustomerService.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Banking\\CustomerService.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking\\CustomerService.cs*",
+              "RelativeToolTip": "ConceptArchitect.Banking\\CustomerService.cs*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T11:54:37.488Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Input.cs",
-              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\Input.cs",
-              "RelativeDocumentMoniker": "ConceptArchitect.Utils\\Input.cs",
-              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\Input.cs",
-              "RelativeToolTip": "ConceptArchitect.Utils\\Input.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAkAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "BankingApiServer\\Controllers\\CustomerController.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "BankingApiServer\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T10:25:18.165Z",
+              "WhenOpened": "2026-04-02T11:53:04.007Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "BankingApiServer\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "BankingApiServer\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T11:52:45.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\Program.cs",
+              "RelativeDocumentMoniker": "BankingApiServer\\Program.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\Program.cs",
+              "RelativeToolTip": "BankingApiServer\\Program.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAEwCMAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T11:48:41.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\TestBanking\\Program.cs",
               "RelativeDocumentMoniker": "TestBanking\\Program.cs",
-              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\TestBanking\\Program.cs*",
-              "RelativeToolTip": "TestBanking\\Program.cs*",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAUwCUAAAA5AAAAAAAAAA==",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\TestBanking\\Program.cs",
+              "RelativeToolTip": "TestBanking\\Program.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T10:24:14.63Z",
+              "WhenOpened": "2026-04-02T11:48:31.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EFCustomerRepository.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking.EFRepository\\EFCustomerRepository.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Banking.EFRepository\\EFCustomerRepository.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking.EFRepository\\EFCustomerRepository.cs",
+              "RelativeToolTip": "ConceptArchitect.Banking.EFRepository\\EFCustomerRepository.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAkwEQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T11:40:18.396Z",
               "EditorCaption": ""
             }
           ]
