@@ -13,9 +13,9 @@ namespace ConceptArchitect.Utils
 
         Task<Entity> GetById(Id Id);
 
-        Task<Entity> Update(Entity customer);
+        Task<Entity> Update(Entity customer, Action<Entity,Entity> mergeOldNew);
 
-        Task<Entity> DeleteById(Id Id);
+        Task DeleteById(Id Id);
 
 
         Task Save();

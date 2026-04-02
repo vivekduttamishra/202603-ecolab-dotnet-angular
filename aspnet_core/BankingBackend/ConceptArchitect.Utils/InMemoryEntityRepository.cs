@@ -19,9 +19,11 @@ namespace ConceptArchitect.Utils
 
             store[entity.Id] = entity;
 
+            return entity;
+
         }
 
-        public async Task<Entity> DeleteById(Id id)
+        public async Task DeleteById(Id id)
         {
             await GetById(id);
             store.Remove(id);
