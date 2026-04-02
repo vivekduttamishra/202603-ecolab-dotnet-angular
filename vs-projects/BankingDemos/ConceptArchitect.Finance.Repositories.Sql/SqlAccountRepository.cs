@@ -12,8 +12,8 @@ namespace ConceptArchitect.Finance.Repositories.Sql
 
     public class SqlAccountRepository : IAccountRepository 
     {
-        //string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.Repositories.Sql\\bank.mdf;Integrated Security=True";
-        string connectionString = "Data Source=SHIVOHAM\\SQLEXPRESS;Initial Catalog=bankdb;Integrated Security=True;Trust Server Certificate=True";
+        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.Repositories.Sql\\bank.mdf;Integrated Security=True";
+        //string connectionString = "Data Source=SHIVOHAM\\SQLEXPRESS;Initial Catalog=bankdb;Integrated Security=True;Trust Server Certificate=True";
         SqlConnection connection;
 
         public void AddAccount(BankAccount account)
@@ -29,10 +29,10 @@ namespace ConceptArchitect.Finance.Repositories.Sql
                     odLimit = ((OverdraftAccount)account).OdLimit;
 
                 command.CommandText = """
-            INSERT INTO [ACCOUNTS] ([NAME], [PASSWORD], [BALANCE], [ACCOUNT_TYPE], [OD_LIMIT])
-            VALUES (@Name, @Password, @Balance, @Type, @Limit);
-            SELECT CAST(SCOPE_IDENTITY() AS INT);
-        """;
+                    INSERT INTO [ACCOUNTS] ([NAME], [PASSWORD], [BALANCE], [ACCOUNT_TYPE], [OD_LIMIT])
+                    VALUES (@Name, @Password, @Balance, @Type, @Limit);
+                    SELECT CAST(SCOPE_IDENTITY() AS INT);
+                """;
 
                 command.Parameters.Clear(); // Critical to avoid 'parameter already defined' errors
                 command.Parameters.AddWithValue("@Name", account.Name);
@@ -98,6 +98,7 @@ namespace ConceptArchitect.Finance.Repositories.Sql
             }
         }
 
+        IAccountFactory factory = new SmartAccountFactory();
         private BankAccount CreateAccount(SqlDataReader reader)
         {
             int accountNumber = Convert.ToInt32(reader["ACCOUNT_NUMBER"]);
@@ -107,16 +108,10 @@ namespace ConceptArchitect.Finance.Repositories.Sql
             var odLimit = Convert.ToDouble(reader["od_limit"]);
             var type = (String) reader["Account_Type"];
 
-            BankAccount account = null;
-            if (type == "SavingsAccount")
-                account = new SavingsAccount(accountNumber, name, password, balance);
-            else if(type=="CurrentAccount")
-                account = new CurrentAccount(accountNumber, name, password, balance);
-            else if (type == "OverdraftAccount")
-            {
-                account=new OverdraftAccount(accountNumber, name, password, balance);
+
+            var account= factory.Create(type, accountNumber, name, password, balance);
+            if (account is OverdraftAccount)
                 (account as OverdraftAccount).OdLimit = odLimit;
-            }
 
             return account;
         }

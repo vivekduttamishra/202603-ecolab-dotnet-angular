@@ -9,6 +9,14 @@ public class ArrayAccountRepository : IAccountRepository
     int maxId = 0;
     int totalAccounts = 0;
 
+
+    public void AddAccount(BankAccount account)
+    {
+        maxId = account.AccountNumber;
+        accounts[account.AccountNumber] = account;
+        totalAccounts++;
+    }
+
     public BankAccount GetById(int accountNumber)
     {
         if (accountNumber < 1 || accountNumber > maxId || accounts[accountNumber] == null)
@@ -17,12 +25,7 @@ public class ArrayAccountRepository : IAccountRepository
             return accounts[accountNumber];
     }
 
-    public void AddAccount(BankAccount account)
-    {
-        maxId = account.AccountNumber;
-        accounts[account.AccountNumber] = account;
-        totalAccounts++;
-    }
+  
 
     public void Remove(int accountNumer)
     {

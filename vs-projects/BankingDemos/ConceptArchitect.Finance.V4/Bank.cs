@@ -56,20 +56,12 @@ public class Bank
         InterestRate = interestRate;
         this.repository=repository;
 
-        accountBuilders["SavingsAccount"]= (accountNumber, name, password, amount)=> new SavingsAccount(accountNumber,name,password, amount);
-        accountBuilders["CurrentAccount"]= (accountNumber, name, password, amount)=> new CurrentAccount(accountNumber,name,password, amount);
-        accountBuilders["OverdraftAccount"]= (accountNumber, name, password, amount)=> new OverdraftAccount(accountNumber,name,password, amount);
-
+       
     }
 
-    public void AddAccountBuilder(string accountType, Func<int,string,string,double,BankAccount> accountBuilder)
-    {
-        accountBuilders[accountType]=accountBuilder;
-    }
+    public IAccountFactory AccountFactory { get; set; } = new SmartAccountFactory();    
 
-    Dictionary<string, Func<int,string,string,double,BankAccount>> accountBuilders=new Dictionary<string, Func<int,string,string,double,BankAccount>>();
 
-    
 
     public int OpenAccount(string accountType, string name, string password, double amount)
     {
@@ -79,12 +71,10 @@ public class Bank
 
         //step 2. create account
 
-        if(!accountBuilders.ContainsKey(accountType))
-            throw new BankingException(0, "Invalid Account Type: "+accountType);
+       
+        var account = AccountFactory.Create(accountType,accountNumber, name, password, amount);
 
-        var accountBuilder = accountBuilders[accountType];
-        //var account = new CurrentAccount(accountNumber, name, password, amount);
-        var account =accountBuilder(accountNumber, name, password, amount);
+       
 
 
         //step 3. add the account to accounts collection

@@ -7,7 +7,7 @@ public class ListAccountRepository : IAccountRepository
     //BankAccount[] accounts = new BankAccount[50]; //only 50 possible for now.
     List<BankAccount> accounts = new List<BankAccount>();
     int maxId=0;
-    int totalAccounts=0;
+    
    
 
 
@@ -21,10 +21,14 @@ public class ListAccountRepository : IAccountRepository
 
     public BankAccount GetById(int accountNumber)
     {
-        if(accountNumber<1 || accountNumber>maxId || accounts[accountNumber-1]==null)
+        if(accountNumber<1 || accountNumber>maxId )
             throw new InvalidAccountException(accountNumber);
-        else
-            return accounts[accountNumber-1];
+
+        var account = accounts.FirstOrDefault(a=>a.AccountNumber==accountNumber);
+        if (account!=null)
+            return account;
+
+        throw new InvalidAccountException(accountNumber);
     }
 
   

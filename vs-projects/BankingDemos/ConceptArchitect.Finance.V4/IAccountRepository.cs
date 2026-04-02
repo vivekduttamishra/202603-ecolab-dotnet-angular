@@ -3,6 +3,7 @@ namespace ConceptArchitect.Finance.Repositories;
 public interface IAccountRepository
 {
     void AddAccount(BankAccount account);
+
     //BankAccount[] GetAll();
 
     IEnumerable<BankAccount> GetAll();
