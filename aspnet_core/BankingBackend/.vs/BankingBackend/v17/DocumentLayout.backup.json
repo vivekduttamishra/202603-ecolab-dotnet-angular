@@ -1,0 +1,148 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.utils\\inmemoryentityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|solutionrelative:conceptarchitect.utils\\inmemoryentityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86F07FB3-8E3A-48D1-97C7-173B4A3EC1B1}|ConceptArchitect.Banking\\ConceptArchitect.Banking.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.banking\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86F07FB3-8E3A-48D1-97C7-173B4A3EC1B1}|ConceptArchitect.Banking\\ConceptArchitect.Banking.csproj|solutionrelative:conceptarchitect.banking\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.utils\\duplicateentityexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|solutionrelative:conceptarchitect.utils\\duplicateentityexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.utils\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|solutionrelative:conceptarchitect.utils\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.utils\\invalididexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|solutionrelative:conceptarchitect.utils\\invalididexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86F07FB3-8E3A-48D1-97C7-173B4A3EC1B1}|ConceptArchitect.Banking\\ConceptArchitect.Banking.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.banking\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86F07FB3-8E3A-48D1-97C7-173B4A3EC1B1}|ConceptArchitect.Banking\\ConceptArchitect.Banking.csproj|solutionrelative:conceptarchitect.banking\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.utils\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AFE5EFB-B2D2-461D-B1EF-1F3C411693F8}|ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj|solutionrelative:conceptarchitect.utils\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 230,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DuplicateEntityException.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\DuplicateEntityException.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Utils\\DuplicateEntityException.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\DuplicateEntityException.cs",
+              "RelativeToolTip": "ConceptArchitect.Utils\\DuplicateEntityException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T07:08:22.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InvalidIdException.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\InvalidIdException.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Utils\\InvalidIdException.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\InvalidIdException.cs",
+              "RelativeToolTip": "ConceptArchitect.Utils\\InvalidIdException.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T07:07:13.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Entity.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\Entity.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Utils\\Entity.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\Entity.cs",
+              "RelativeToolTip": "ConceptArchitect.Utils\\Entity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T06:58:42.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InMemoryEntityRepository.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\InMemoryEntityRepository.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Utils\\InMemoryEntityRepository.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\InMemoryEntityRepository.cs",
+              "RelativeToolTip": "ConceptArchitect.Utils\\InMemoryEntityRepository.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAowD4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T06:54:38.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\IRepository.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Utils\\IRepository.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Utils\\IRepository.cs",
+              "RelativeToolTip": "ConceptArchitect.Utils\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T06:47:45.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking\\CustomerService.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Banking\\CustomerService.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking\\CustomerService.cs",
+              "RelativeToolTip": "ConceptArchitect.Banking\\CustomerService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T06:33:12.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking\\Customer.cs",
+              "RelativeDocumentMoniker": "ConceptArchitect.Banking\\Customer.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking\\Customer.cs",
+              "RelativeToolTip": "ConceptArchitect.Banking\\Customer.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T06:30:23.442Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 258,
+          "SelectedChildIndex": -1,
+          "Children": []
+        }
+      ]
+    }
+  ]
+}
