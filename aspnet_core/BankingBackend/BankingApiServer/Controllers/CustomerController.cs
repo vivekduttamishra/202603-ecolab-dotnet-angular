@@ -8,6 +8,7 @@ namespace BankingApiServer.Controllers
 
     [ApiController]
     [Route("/api/customers")]  //this is base_url
+    [ExceptionMapper(typeof(DuplicateEntityException), 400)]
     //[InvalidIdMapper]
     public class CustomerController: ControllerBase
     {
@@ -31,6 +32,12 @@ namespace BankingApiServer.Controllers
 
                 var customer = await service.GetCustomerByEmail(email);
                 return customer; 
+        }
+
+        [HttpPost]
+        public async Task<Customer> AddNewCustomer()
+        {
+            throw new DuplicateEntityException("Duplicate Customer Email");
         }
     }
 }

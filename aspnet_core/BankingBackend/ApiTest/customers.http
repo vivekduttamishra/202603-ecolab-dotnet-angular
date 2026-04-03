@@ -11,9 +11,12 @@ GET {{customer_url}}/sanjay@gmail.com
 
 
 ###
-
 # Try Get User by Invalid Email
 
 GET  {{customer_url}}/invalid@email.com
 
 
+
+###
+# Add a new Customer
+POST {{customer_url}}
