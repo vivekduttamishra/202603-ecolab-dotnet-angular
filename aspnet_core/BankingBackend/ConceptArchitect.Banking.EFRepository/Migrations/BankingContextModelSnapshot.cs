@@ -29,6 +29,11 @@ namespace ConceptArchitect.Banking.EFRepository.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountNumber"));
 
+                    b.Property<string>("AccountType")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
+
                     b.Property<double>("Balance")
                         .HasColumnType("float");
 
@@ -44,6 +49,10 @@ namespace ConceptArchitect.Banking.EFRepository.Migrations
                     b.HasIndex("OwnerEmail");
 
                     b.ToTable("Accounts");
+
+                    b.HasDiscriminator<string>("AccountType").HasValue("BankAccount");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("ConceptArchitect.Banking.Customer", b =>
@@ -53,7 +62,8 @@ namespace ConceptArchitect.Banking.EFRepository.Migrations
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -64,7 +74,8 @@ namespace ConceptArchitect.Banking.EFRepository.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
@@ -75,6 +86,33 @@ namespace ConceptArchitect.Banking.EFRepository.Migrations
                     b.HasKey("Email");
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("ConceptArchitect.Banking.CurrentAccount", b =>
+                {
+                    b.HasBaseType("ConceptArchitect.Banking.BankAccount");
+
+                    b.HasDiscriminator().HasValue("CurrentAccount");
+                });
+
+            modelBuilder.Entity("ConceptArchitect.Banking.OverdraftAccount", b =>
+                {
+                    b.HasBaseType("ConceptArchitect.Banking.BankAccount");
+
+                    b.Property<double>("OdLimit")
+                        .HasColumnType("float");
+
+                    b.HasDiscriminator().HasValue("OverdraftAccount");
+                });
+
+            modelBuilder.Entity("ConceptArchitect.Banking.SavingsAccount", b =>
+                {
+                    b.HasBaseType("ConceptArchitect.Banking.BankAccount");
+
+                    b.Property<double>("MinBalance")
+                        .HasColumnType("float");
+
+                    b.HasDiscriminator().HasValue("SavingsAccount");
                 });
 
             modelBuilder.Entity("ConceptArchitect.Banking.BankAccount", b =>

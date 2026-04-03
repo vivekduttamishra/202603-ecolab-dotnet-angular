@@ -14,6 +14,20 @@ namespace ConceptArchitect.Banking.EFRepository
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder
+                    .Entity<BankAccount>()
+                    .HasDiscriminator<string>("AccountType") //create a string column AccountType
+                    .HasValue<SavingsAccount>("SavingsAccount")
+                    .HasValue<CurrentAccount>("CurrentAccount")
+                    .HasValue<OverdraftAccount>("OverdraftAccount");
+
+
+
+        }
+
         public DbSet<Customer> Customers { get; set; }
         public DbSet<BankAccount> Accounts { get; set; }
 

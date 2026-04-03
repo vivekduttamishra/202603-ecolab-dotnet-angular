@@ -25,13 +25,18 @@ namespace ConceptArchitect.Banking
 
         public AccountStatus Status { get; set; }
 
-        public void Debit(double amount)
+        public virtual void Debit(double amount)
         {
             Balance -= amount;
         }
-        public void Credit(double amount)
+        public virtual void Credit(double amount)
         {
             Balance += amount;
+        }
+
+        public virtual double EffectiveBalance
+        {
+            get {  return Balance; }
         }
     }
 }
