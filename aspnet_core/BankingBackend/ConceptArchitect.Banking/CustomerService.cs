@@ -28,6 +28,11 @@ namespace ConceptArchitect.Banking
             return await repository.GetAll();
         }
 
+        public async Task<Customer> GetCustomerByEmail(string email)
+        {
+            return await repository.GetById(email);
+        }
+
         public async Task ActivateCustomer(string email, bool isActive=true)
         {
             Customer customer = await repository.GetById(email);

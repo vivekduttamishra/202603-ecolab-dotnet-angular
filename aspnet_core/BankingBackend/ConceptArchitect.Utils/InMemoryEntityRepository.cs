@@ -56,7 +56,7 @@ namespace ConceptArchitect.Utils
             if (store.ContainsKey(id))
                 return store[id];
             else
-                throw new InvalidIdException<Id>(id);
+                throw new InvalidIdException(id);
         }
 
         

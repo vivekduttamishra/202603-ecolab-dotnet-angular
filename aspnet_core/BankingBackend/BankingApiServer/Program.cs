@@ -2,6 +2,7 @@
 using ConceptArchitect.Banking;
 using ConceptArchitect.Banking.EFRepository;
 using ConceptArchitect.Utils;
+using ConceptArchitect.Utils.Web;
 using Microsoft.EntityFrameworkCore;
 
 namespace BankingApiServer
@@ -24,7 +25,10 @@ namespace BankingApiServer
         {
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers(config =>
+            {
+                config.Filters.Add(new InvalidIdMapperAttribute());
+            } );
 
             builder.Services.AddDbContext<BankingContext>(option =>
             {
@@ -48,6 +52,12 @@ namespace BankingApiServer
             //}
 
             app.UseHttpsRedirection();
+
+            // app.UseExceptionHandler<InvalidIdException>(404, ex=>new
+            // {
+            //     Message=ex.Message,
+            //     Id= ex.Id
+            // });
 
             //app.UseAuthorization();
 

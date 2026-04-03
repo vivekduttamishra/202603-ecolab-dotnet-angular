@@ -38,8 +38,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 230,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -50,8 +54,7 @@
               "RelativeToolTip": "BankingApiServer\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-02T11:56:16.175Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-02T11:56:16.175Z"
             },
             {
               "$type": "Document",
@@ -61,14 +64,10 @@
               "RelativeDocumentMoniker": "ConceptArchitect.Banking\\CustomerService.cs",
               "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking\\CustomerService.cs",
               "RelativeToolTip": "ConceptArchitect.Banking\\CustomerService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwA4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-02T11:54:37.488Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "BankingApiServer\\Controllers\\CustomerController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T11:53:04.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-02T11:53:04.007Z"
             },
             {
               "$type": "Document",
@@ -93,8 +91,7 @@
               "RelativeToolTip": "BankingApiServer\\Controllers\\WeatherForecastController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T11:52:45.727Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-02T11:52:45.727Z"
             },
             {
               "$type": "Document",
@@ -106,8 +103,7 @@
               "RelativeToolTip": "BankingApiServer\\Program.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAEwCMAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T11:48:41.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-02T11:48:41.982Z"
             },
             {
               "$type": "Document",
@@ -119,8 +115,7 @@
               "RelativeToolTip": "TestBanking\\Program.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T11:48:31.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-02T11:48:31.508Z"
             },
             {
               "$type": "Document",
@@ -132,8 +127,7 @@
               "RelativeToolTip": "ConceptArchitect.Banking.EFRepository\\EFCustomerRepository.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAkwEQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T11:40:18.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-02T11:40:18.396Z"
             }
           ]
         }

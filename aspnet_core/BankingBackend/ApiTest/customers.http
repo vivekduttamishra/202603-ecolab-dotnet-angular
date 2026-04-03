@@ -1,0 +1,19 @@
+@base_url = http://localhost:8000/api
+@customer_url={{base_url}}/customers
+
+# Get All Customers
+GET {{customer_url}}
+
+###
+
+# Get User by Valid Email
+GET {{customer_url}}/sanjay@gmail.com
+
+
+###
+
+# Try Get User by Invalid Email
+
+GET  {{customer_url}}/invalid@email.com
+
+

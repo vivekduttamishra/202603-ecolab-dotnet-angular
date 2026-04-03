@@ -2,25 +2,20 @@
 namespace ConceptArchitect.Utils
 {
     [Serializable]
-    public  class InvalidIdException<I> : Exception
+    public  class InvalidIdException : Exception
     {
-        public I Id { get; set; }
+        public object Id { get; set; }
 
-        public InvalidIdException()
+
+
+        public InvalidIdException(object id, string? message="Invalid Id")
+         : this(id,message,null)
         {
         }
 
-        public InvalidIdException(I? id)
+        public InvalidIdException(object id, string? message, Exception? innerException) : base(message, innerException)
         {
-            Id = id;
-        }
-
-        public InvalidIdException(string? message) : base(message)
-        {
-        }
-
-        public InvalidIdException(string? message, Exception? innerException) : base(message, innerException)
-        {
+            this.Id=id;
         }
     }
 }

@@ -49,7 +49,7 @@ namespace ConceptArchitect.Banking.EFRepository
         {
             var customer= await context.Customers.FirstOrDefaultAsync(c => c.Email == id);
             if (customer == null)
-                throw new InvalidIdException<string>(id);
+                throw new InvalidIdException(id);
 
             return customer;
         }
