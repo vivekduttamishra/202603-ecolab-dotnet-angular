@@ -1,4 +1,5 @@
-﻿using ConceptArchitect.Banking;
+﻿using ConceptArchitect.ApiKeyService;
+using ConceptArchitect.Banking;
 using ConceptArchitect.Utils;
 using ConceptArchitect.Utils.Web;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +27,7 @@ namespace BankingApiServer.Controllers
         }
 
         [HttpGet("{email}")] //base_url + "/email"
-        
+        [ApiKeyRequired]
         public async Task<Customer> GetCustomerById(string email)
         {
 
@@ -35,9 +36,13 @@ namespace BankingApiServer.Controllers
         }
 
         [HttpPost]
-        public async Task<Customer> AddNewCustomer()
+        public async Task<IActionResult> AddNewCustomer([FromBody] Customer customer)
         {
-            throw new DuplicateEntityException("Duplicate Customer Email");
+            //we come here only if data is Valid
+            var result = await service.AddCustomer(customer);
+
+            //return created result 201
+            return Created("", result);
         }
     }
 }

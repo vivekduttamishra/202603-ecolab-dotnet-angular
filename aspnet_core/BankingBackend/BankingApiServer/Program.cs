@@ -4,6 +4,7 @@ using ConceptArchitect.Banking.EFRepository;
 using ConceptArchitect.Utils;
 using ConceptArchitect.Utils.Web;
 using Microsoft.EntityFrameworkCore;
+using ConceptArchitect.ApiKeyService;
 
 namespace BankingApiServer
 {
@@ -38,6 +39,7 @@ namespace BankingApiServer
 
             builder.Services.AddScoped<IRepository<Customer, String>, EFCustomerRepository>();
             builder.Services.AddScoped<CustomerService>();
+            builder.Services.AddSingleton<IApiKeyService, DummyApiKeyService>();
 
             
             //builder.Services.AddOpenApi();

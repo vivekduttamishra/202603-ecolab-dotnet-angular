@@ -5,18 +5,48 @@
 GET {{customer_url}}
 
 ###
-
-# Get User by Valid Email
+# Try Get User by Valid Email without a valid Api Key
 GET {{customer_url}}/sanjay@gmail.com
 
+###
+# Try Get User by Valid Email without a invalid valid Api Key
+GET {{customer_url}}/sanjay@gmail.com
+ApiKey: invalid key 
 
 ###
-# Try Get User by Invalid Email
+# Try Get User by valid Email with valid api key
+GET {{customer_url}}/sanjay@gmail.com
+ApiKey: APIKEY007
+
+
+###
+# Try Get User by Invalid Email with valid api key
 
 GET  {{customer_url}}/invalid@email.com
+ApiKey: APIKEY005
 
 
 
 ###
-# Add a new Customer
+# Add a new Customer with invalid details
 POST {{customer_url}}
+Content-Type: application/json
+
+{
+    "email":"vivek",
+    "password":"hi",
+    "address":"Bangalore",
+    "phone":"999-39-39"
+}
+
+###
+# Add a new Customer with valid details
+POST {{customer_url}}
+Content-Type: application/json
+
+{
+    "name":"Amit Singh",
+    "email":"amit@gmail.com",
+    "password":"p@ssword#123",
+    "address":"A12, Aditya Garden, Pune: 410001"
+}
