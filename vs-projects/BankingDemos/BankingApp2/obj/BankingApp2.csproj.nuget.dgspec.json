@@ -1,0 +1,293 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\BankingApp2\\BankingApp2.csproj": {}
+  },
+  "projects": {
+    "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\BankingApp2\\BankingApp2.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\BankingApp2\\BankingApp2.csproj",
+        "projectName": "BankingApp2",
+        "projectPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\BankingApp2\\BankingApp2.csproj",
+        "packagesPath": "C:\\Users\\vivek\\.nuget\\packages\\",
+        "outputPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\BankingApp2\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vivek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.Repositories.Sql\\ConceptArchitect.Finance.Repositories.Sql.csproj": {
+                "projectPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.Repositories.Sql\\ConceptArchitect.Finance.Repositories.Sql.csproj"
+              },
+              "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\ConceptArchitect.Finance.V4.csproj": {
+                "projectPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\ConceptArchitect.Finance.V4.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.Repositories.Sql\\ConceptArchitect.Finance.Repositories.Sql.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.Repositories.Sql\\ConceptArchitect.Finance.Repositories.Sql.csproj",
+        "projectName": "ConceptArchitect.Finance.Repositories.Sql",
+        "projectPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.Repositories.Sql\\ConceptArchitect.Finance.Repositories.Sql.csproj",
+        "packagesPath": "C:\\Users\\vivek\\.nuget\\packages\\",
+        "outputPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.Repositories.Sql\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vivek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\ConceptArchitect.Finance.V4.csproj": {
+                "projectPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\ConceptArchitect.Finance.V4.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\ConceptArchitect.Finance.V4.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\ConceptArchitect.Finance.V4.csproj",
+        "projectName": "ConceptArchitect.Finance.V4",
+        "projectPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\ConceptArchitect.Finance.V4.csproj",
+        "packagesPath": "C:\\Users\\vivek\\.nuget\\packages\\",
+        "outputPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Finance.V4\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vivek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj": {
+                "projectPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj",
+        "projectName": "ConceptArchitect.Utils",
+        "projectPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Utils\\ConceptArchitect.Utils.csproj",
+        "packagesPath": "C:\\Users\\vivek\\.nuget\\packages\\",
+        "outputPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\vs-projects\\BankingDemos\\ConceptArchitect.Utils\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vivek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

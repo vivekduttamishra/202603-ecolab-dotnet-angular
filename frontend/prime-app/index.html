@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prime Finder</h1>
+    <fieldset>
+        <legend>Prime Range</legend>
+        <label for="min">
+            <input type="text" id="min" placeholder="Min">
+        </label>
+        <label for="max">
+            <input type="text" id="max" placeholder="Max">
+        </label>
+        <button class="btn btn-sm btn-primary" id="calculateButton">Calculate</button>
+        <button class="btn btn-sm btn-danger" id="clearButton">
+            Clear Results
+        </button>
+    </fieldset>
+
+    <table class="table table-compact table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Min</th>
+                <th>Max</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody id="results">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>500000</td>
+                <td>running</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>0</td>
+                <td>100</td>
+                <td>
+                  <span class="text-success">
+                      25
+                  </span>  
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>100</td>
+                <td>2</td>
+                <td>
+                    <span class="text-danger">
+
+                    Range Error
+                </span>
+            </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>2</td>
+                <td>200000</td>
+                <td>running</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="app.js">
+
+    </script>
+
+</body>
+</html>

@@ -4,4 +4,4 @@ private/
 *.dll
 debug/
 release/
-obj/
+obj/node_modules/
