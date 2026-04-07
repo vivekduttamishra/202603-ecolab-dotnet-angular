@@ -63,6 +63,7 @@ namespace BankingApiServer
 
             //app.UseAuthorization();
 
+            app.UseFileServer();
 
             app.MapControllers();
         }

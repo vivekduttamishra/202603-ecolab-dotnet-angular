@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B0F223B4-BC00-468A-AE24-0A7253D5BCBD}|TestBanking\\TestBanking.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\testbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0F223B4-BC00-468A-AE24-0A7253D5BCBD}|TestBanking\\TestBanking.csproj|solutionrelative:testbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\bankingapiserver\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|solutionrelative:bankingapiserver\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\bankingapiserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59B80F8C-2C34-4CEE-9CCD-A3DDD47C2B54}|BankingApiServer\\BankingApiServer.csproj|solutionrelative:bankingapiserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EDEE7B4-E3CC-400D-9907-48DB43F9C931}|ConceptArchitect.Banking.EFRepository\\ConceptArchitect.Banking.EFRepository.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.banking.efrepository\\bankingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EDEE7B4-E3CC-400D-9907-48DB43F9C931}|ConceptArchitect.Banking.EFRepository\\ConceptArchitect.Banking.EFRepository.csproj|solutionrelative:conceptarchitect.banking.efrepository\\bankingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__WORKS_CORPORATE_202603_ECOLAB_DOTNET_ANGULAR_ASPNET_CORE_BANKINGBACKEND_CONCEPTARCHITECT.BANKING.EFREPOSITORY_EFBANKING.MDF/True/SqlTable/dbo.Accounts.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0F223B4-BC00-468A-AE24-0A7253D5BCBD}|TestBanking\\TestBanking.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\testbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0F223B4-BC00-468A-AE24-0A7253D5BCBD}|TestBanking\\TestBanking.csproj|solutionrelative:testbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4EDEE7B4-E3CC-400D-9907-48DB43F9C931}|ConceptArchitect.Banking.EFRepository\\ConceptArchitect.Banking.EFRepository.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.banking.efrepository\\migrations\\20260403093223_bankaccount_subclasses_added.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,10 +38,6 @@
       "RelativeMoniker": "D:0:0:{86F07FB3-8E3A-48D1-97C7-173B4A3EC1B1}|ConceptArchitect.Banking\\ConceptArchitect.Banking.csproj|solutionrelative:conceptarchitect.banking\\overdraftaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EDEE7B4-E3CC-400D-9907-48DB43F9C931}|ConceptArchitect.Banking.EFRepository\\ConceptArchitect.Banking.EFRepository.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.banking.efrepository\\bankingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EDEE7B4-E3CC-400D-9907-48DB43F9C931}|ConceptArchitect.Banking.EFRepository\\ConceptArchitect.Banking.EFRepository.csproj|solutionrelative:conceptarchitect.banking.efrepository\\bankingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{86F07FB3-8E3A-48D1-97C7-173B4A3EC1B1}|ConceptArchitect.Banking\\ConceptArchitect.Banking.csproj|d:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\bankingbackend\\conceptarchitect.banking\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86F07FB3-8E3A-48D1-97C7-173B4A3EC1B1}|ConceptArchitect.Banking\\ConceptArchitect.Banking.csproj|solutionrelative:conceptarchitect.banking\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -41,21 +49,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 230,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\TestBanking\\Program.cs",
-              "RelativeDocumentMoniker": "TestBanking\\Program.cs",
-              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\TestBanking\\Program.cs*",
-              "RelativeToolTip": "TestBanking\\Program.cs*",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAIwFAAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T09:35:48.45Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -63,16 +58,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "dbo.Accounts [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__WORKS_CORPORATE_202603_ECOLAB_DOTNET_ANGULAR_ASPNET_CORE_BANKINGBACKEND_CONCEPTARCHITECT.BANKING.EFREPOSITORY_EFBANKING.MDF/True/SqlTable/dbo.Accounts.sql",
-              "ToolTip": "dbo.Accounts [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-04-03T09:34:54.798Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\Program.cs",
+              "RelativeDocumentMoniker": "BankingApiServer\\Program.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\Program.cs",
+              "RelativeToolTip": "BankingApiServer\\Program.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwEEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T09:05:59.114Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "BankingApiServer\\wwwroot\\index.html",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\BankingApiServer\\wwwroot\\index.html",
+              "RelativeToolTip": "BankingApiServer\\wwwroot\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-04-07T09:05:41.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\TestBanking\\Program.cs",
+              "RelativeDocumentMoniker": "TestBanking\\Program.cs",
+              "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\TestBanking\\Program.cs",
+              "RelativeToolTip": "TestBanking\\Program.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAIwFQAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T09:35:48.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.Accounts.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__WORKS_CORPORATE_202603_ECOLAB_DOTNET_ANGULAR_ASPNET_CORE_BANKINGBACKEND_CONCEPTARCHITECT.BANKING.EFREPOSITORY_EFBANKING.MDF/True/SqlTable/dbo.Accounts.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__WORKS_CORPORATE_202603_ECOLAB_DOTNET_ANGULAR_ASPNET_CORE_BANKINGBACKEND_CONCEPTARCHITECT.BANKING.EFREPOSITORY_EFBANKING.MDF/True/SqlTable/dbo.Accounts.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-04-03T09:34:54.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "20260403093223_BankAccount_SubClasses_Added.cs",
               "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking.EFRepository\\Migrations\\20260403093223_BankAccount_SubClasses_Added.cs",
               "RelativeDocumentMoniker": "ConceptArchitect.Banking.EFRepository\\Migrations\\20260403093223_BankAccount_SubClasses_Added.cs",
@@ -80,25 +112,24 @@
               "RelativeToolTip": "ConceptArchitect.Banking.EFRepository\\Migrations\\20260403093223_BankAccount_SubClasses_Added.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAQwA4AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T09:32:24.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T09:32:24.421Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "BankingContext.cs",
               "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking.EFRepository\\BankingContext.cs",
               "RelativeDocumentMoniker": "ConceptArchitect.Banking.EFRepository\\BankingContext.cs",
               "ToolTip": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking.EFRepository\\BankingContext.cs",
               "RelativeToolTip": "ConceptArchitect.Banking.EFRepository\\BankingContext.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBgAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBgAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T09:24:35.706Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "OverdraftAccount.cs",
               "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking\\OverdraftAccount.cs",
               "RelativeDocumentMoniker": "ConceptArchitect.Banking\\OverdraftAccount.cs",
@@ -106,12 +137,11 @@
               "RelativeToolTip": "ConceptArchitect.Banking\\OverdraftAccount.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T09:10:47.462Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T09:10:47.462Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "SavingsAccount.cs",
               "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking\\SavingsAccount.cs",
               "RelativeDocumentMoniker": "ConceptArchitect.Banking\\SavingsAccount.cs",
@@ -119,12 +149,11 @@
               "RelativeToolTip": "ConceptArchitect.Banking\\SavingsAccount.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T09:10:30.805Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T09:10:30.805Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "CurrentAccount.cs",
               "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking\\CurrentAccount.cs",
               "RelativeDocumentMoniker": "ConceptArchitect.Banking\\CurrentAccount.cs",
@@ -132,12 +161,11 @@
               "RelativeToolTip": "ConceptArchitect.Banking\\CurrentAccount.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T09:10:20.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T09:10:20.817Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "BankAccount.cs",
               "DocumentMoniker": "D:\\works\\corporate\\202603-ecolab-dotnet-angular\\aspnet_core\\BankingBackend\\ConceptArchitect.Banking\\BankAccount.cs",
               "RelativeDocumentMoniker": "ConceptArchitect.Banking\\BankAccount.cs",
@@ -145,8 +173,7 @@
               "RelativeToolTip": "ConceptArchitect.Banking\\BankAccount.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAiwCkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T09:09:43.208Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T09:09:43.208Z"
             }
           ]
         }
