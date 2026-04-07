@@ -13,3 +13,10 @@ function sum( ...numbers:number[]):number{
 
     return sum;
 }
+
+
+//sum("a","b"); //error since string is not assignable to number
+
+let result = sum(2,3);
+
+console.log('result',result);

@@ -17,8 +17,15 @@
         <label for="max">
             <input type="text" id="max" placeholder="Max">
         </label>
-        <button class="btn btn-sm btn-primary" id="calculateButton">Calculate</button>
-        <button class="btn btn-sm btn-danger" id="clearButton">
+        <button class="btn btn-sm btn-primary" 
+                id="calculateButton"
+                onclick="addTask()"
+                
+                >Calculate</button>
+        <button class="btn btn-sm btn-danger" 
+        onclick="clearResults()"
+        id="clearButton"
+        >
             Clear Results
         </button>
     </fieldset>
@@ -70,7 +77,11 @@
     </table>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="app.js">
+    <script>
+        var exports={};
+    </script>
+   
+    <script src="dist/app.js">
 
     </script>
 
