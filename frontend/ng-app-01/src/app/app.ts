@@ -1,14 +1,18 @@
 import { Component, signal } from "@angular/core";
-import { Clock } from "./comonents/clock.component";
+import { Header } from "./comonents/header.component";
+import { HomeScreen } from "./comonents/home-screen.component";
+import { Likes } from "./comonents/likes.component";
 
 @Component({
     selector: "the-bank",
 
     template: `
-        <h1>{{title}}</h1>
-        <util-clock></util-clock>
-        <p>Welcome to The Bank—the only bank you need to bank with.</p>
-        <button (click)="incrementLike()" >{{likes}} likes</button>
+        <div>
+            <app-header></app-header>
+            <app-likes></app-likes>
+            <home-screen></home-screen>
+        </div>
+        
         `,
 
    styles: `
@@ -21,7 +25,7 @@ import { Clock } from "./comonents/clock.component";
     }
 
    `,
-   imports: [Clock]
+   imports: [Header, HomeScreen, Likes]
 
 })
 export class App {

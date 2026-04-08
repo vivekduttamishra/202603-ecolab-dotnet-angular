@@ -77,6 +77,9 @@ function addTask(){
     const row = createRow(task);
 
     tasksUI!.innerHTML+= row;
+
+
+    
     updateRow(task);
 
     let promise = findPrimes(task.min,task.max);
