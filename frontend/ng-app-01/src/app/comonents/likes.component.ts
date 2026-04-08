@@ -6,15 +6,24 @@ import { NgIf } from "../../../node_modules/@angular/common/types/_common_module
     selector:'app-likes',
     template:`
      <p> 
-        {{likes()}} Likes 
-       
-        @if(!liked()){
-            <button (click)="handleLike()"> Like Us </button>
-        }
+       <span class='heart' (click)="handleLike()" >
+            {{liked()?filled:empty}}
+        </span> 
+       {{likes()}}
     
      </p>
      
     `,
+    styles:`
+    
+        p{
+            font-size: 1.5em;
+        }
+        .heart{
+            cursor:pointer;
+        }
+    
+    `
    
 })
 export class Likes{
@@ -24,22 +33,28 @@ export class Likes{
     empty="🤍"
     filled="❤️"
 
+
+
+
+
     constructor(){
         this.fakeLikes();
     }
 
     handleLike(){
-        this.likes.set(this.likes()+1)
-        this.liked.set(true)
+        let delta = this.liked()? -1 : 1
+
+        this.likes.set(this.likes()+delta)
+        this.liked.set(!this.liked())
     }
 
     fakeLikes(){
         setInterval(()=>{
-            const newLikes = Math.floor(Math.random()*3)+3
+            const newLikes = Math.floor(Math.random()*6)-2
             
             this.likes.set(this.likes() + newLikes)
 
-        },2000)
+        },1000)
     }
 
 }
