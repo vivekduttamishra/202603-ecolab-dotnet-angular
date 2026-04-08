@@ -17,7 +17,10 @@ import { NgIf } from "../../../node_modules/@angular/common/types/_common_module
     styles:`
     
         p{
-            font-size: 1.5em;
+            
+            margin-left:10px;
+            margin-right:10px;
+            margin-top:25%;
         }
         .heart{
             cursor:pointer;

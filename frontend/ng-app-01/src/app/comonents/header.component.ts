@@ -1,20 +1,19 @@
-import { Component } from "@angular/core";
+import { Component, input,  signal } from "@angular/core";
 import { Clock } from "./clock.component";
 import { Naivator } from "./navigator.component";
+import { Memebers } from "./members.component";
+import { Likes } from "./likes.component";
 
 
 @Component({
     standalone: true, //not part of module
     selector: 'app-header',
-    template: `
-    <div>
-        <h1>Universal Bank</h1>
-        <app-navigator></app-navigator>
-        <util-clock></util-clock>
-    </div>    
-    `,
-    imports: [Clock, Naivator]
+    templateUrl:'./header.component.html',
+    styleUrl: './header.component.css'
+    ,
+    imports: [Clock, Naivator, Memebers, Likes]
 })
 export class Header {
-
+   
+    title= input('Site Title')  //user will provide this
 }

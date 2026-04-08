@@ -3,38 +3,33 @@ import { Header } from "./comonents/header.component";
 import { HomeScreen } from "./comonents/home-screen.component";
 import { Likes } from "./comonents/likes.component";
 import { Feedback } from "./comonents/feedback.component";
+import { Clock } from "./comonents/clock.component";
+import { testComponent } from "./comonents/test.component";
 
 @Component({
     selector: "the-bank",
 
     template: `
         <div>
-            <app-header></app-header>
-            <app-likes></app-likes>
-            <app-feedback></app-feedback>
-            <home-screen></home-screen>
+            
+            <app-header title={{title}}  ></app-header>
+            <div class='screen'>
+                <home-screen></home-screen>
+            </div>
         </div>
         
         `,
 
    styles: `
-    h1{
-        color: cadetblue;
-    }
-
-    p{
-        color:cadetblue;
-    }
+   .screen{
+    margin:10px;
+   }
 
    `,
-   imports: [Header, HomeScreen, Likes, Feedback]
+   imports: [Header, HomeScreen,  testComponent]
 
 })
 export class App {
-    title='IDFC Bank'
-    likes=0
-
-    incrementLike(){
-        this.likes++;
-    }
+    title='The Bank'
+    
 }
