@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking Demo UI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f5f7fa; }
+    .card { border-radius: 12px; }
+    .navbar { margin-bottom: 20px; }
+    .hidden { display: none; }
+    .link-row { cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MyBank</a>
+    <div>
+      <button class="btn btn-light me-2" onclick="navigate('dashboard')">Dashboard</button>
+      <button class="btn btn-light me-2" onclick="navigate('transactions')">Transactions</button>
+      <button class="btn btn-light me-2" onclick="navigate('openAccount')">Open Account</button>
+      <button class="btn btn-warning me-2" id="managerNav" onclick="navigate('manager')">Manager</button>
+      <button class="btn btn-light" id="loginBtn" onclick="showLogin()">Login</button>
+      <button class="btn btn-danger hidden" id="logoutBtn" onclick="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- LOGIN -->
+  <div class="mb-5 hidden" id="loginSection">
+    <h4>Login</h4>
+    <div class="card p-4 col-md-6">
+      <input id="email" class="form-control mb-2" placeholder="Email">
+      <input type="password" class="form-control mb-2" placeholder="Password">
+      <button class="btn btn-primary w-100" onclick="fakeLogin()">Login</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboardSection">
+    <h4>Account Summary</h4>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>Savings</h5>
+          <p>123456789</p>
+          <h3>₹50,000</h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>Current</h5>
+          <p>987654321</p>
+          <h3>₹1,20,000</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRANSACTIONS -->
+  <div id="transactionsSection" class="hidden">
+    <h4>Transactions</h4>
+
+    <div class="card p-3 mb-3">
+      <div class="row g-3">
+
+        <!-- Transaction Type FIRST -->
+        <div class="col-md-3">
+          <select class="form-select" id="txnType" onchange="handleTxnType()">
+            <option value="deposit">Deposit</option>
+            <option value="withdraw">Withdraw</option>
+            <option value="self">Self Transfer</option>
+            <option value="transfer">Transfer</option>
+            <option value="upi">UPI</option>
+          </select>
+        </div>
+
+        <!-- From Account -->
+        <div class="col-md-3 hidden" id="fromAccountField">
+          <select class="form-select" id="fromAccount">
+            <option value="123456789">Savings (123456789)</option>
+            <option value="987654321">Current (987654321)</option>
+          </select>
+        </div>
+
+        <!-- To Account (Dropdown) -->
+        <div class="col-md-3 hidden" id="toAccountDropdown">
+          <select class="form-select" id="selfAccountSelect"></select>
+        </div>
+
+        <!-- To Account (Input) -->
+        <div class="col-md-3 hidden" id="toAccountInput">
+          <input class="form-control" placeholder="Account Number">
+        </div>
+
+        <!-- UPI Input -->
+        <div class="col-md-3 hidden" id="upiField">
+          <input class="form-control" placeholder="Phone / UPI ID">
+        </div>
+
+        <!-- Amount -->
+        <div class="col-md-3">
+          <input class="form-control" placeholder="Amount">
+        </div>
+
+        <div class="col-md-3">
+          <button class="btn btn-success w-100">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIST -->
+    <table class="table">
+      <tbody>
+        <tr class="link-row" onclick="showDetails()">
+          <td>03 Mar</td>
+          <td>Self Transfer</td>
+          <td>₹2,000</td>
+          <td><span class="badge bg-warning">Pending</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- DETAILS -->
+    <div id="txnDetails" class="hidden">
+      <div class="card p-3">
+        <p>Status: <span class="badge bg-warning">Pending</span></p>
+        <input id="disputeReason" class="form-control mb-2" placeholder="Reason">
+        <button class="btn btn-danger" onclick="submitDispute()">Dispute</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPEN ACCOUNT -->
+  <div id="openAccountSection" class="hidden">
+    <h4>Open Account</h4>
+    <div class="card p-3">
+      <input class="form-control mb-2" placeholder="Name">
+      <input class="form-control mb-2" placeholder="Email">
+      <button class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+
+  <!-- MANAGER -->
+  <div id="managerSection" class="hidden">
+    <h4>Manager Panel</h4>
+    <table class="table"><tbody id="disputeTable"></tbody></table>
+  </div>
+
+</div>
+
+<script>
+  function navigate(section) {
+    ['dashboard','transactions','openAccount','manager'].forEach(s => {
+      document.getElementById(s+'Section').classList.add('hidden');
+    });
+    document.getElementById(section+'Section').classList.remove('hidden');
+  }
+
+  function showLogin() {
+    document.getElementById('loginSection').classList.remove('hidden');
+  }
+
+  function fakeLogin() {
+    document.getElementById('loginSection').classList.add('hidden');
+    document.getElementById('loginBtn').classList.add('hidden');
+    document.getElementById('logoutBtn').classList.remove('hidden');
+  }
+
+  function logout() { location.reload(); }
+
+  function handleTxnType() {
+    const type = document.getElementById('txnType').value;
+
+    const from = document.getElementById('fromAccountField');
+    const toDropdown = document.getElementById('toAccountDropdown');
+    const toInput = document.getElementById('toAccountInput');
+    const upi = document.getElementById('upiField');
+
+    [from,toDropdown,toInput,upi].forEach(e => e.classList.add('hidden'));
+
+    if (type === 'deposit') {
+      toDropdown.classList.remove('hidden');
+      populateAccounts('selfAccountSelect');
+    }
+
+    if (type === 'withdraw') {
+      from.classList.remove('hidden');
+    }
+
+    if (type === 'self') {
+      from.classList.remove('hidden');
+      toDropdown.classList.remove('hidden');
+      populateSelfAccounts();
+    }
+
+    if (type === 'transfer') {
+      from.classList.remove('hidden');
+      toInput.classList.remove('hidden');
+    }
+
+    if (type === 'upi') {
+      from.classList.remove('hidden');
+      upi.classList.remove('hidden');
+    }
+  }
+
+  function populateAccounts(selectId) {
+    const select = document.getElementById(selectId);
+    const accounts = [
+      { id:'123456789', name:'Savings' },
+      { id:'987654321', name:'Current' }
+    ];
+    select.innerHTML='';
+    accounts.forEach(acc=>{
+      const opt=document.createElement('option');
+      opt.value=acc.id;
+      opt.text=`${acc.name} (${acc.id})`;
+      select.appendChild(opt);
+    });
+  }
+
+  function populateSelfAccounts() {
+    const from = document.getElementById('fromAccount').value;
+    const select = document.getElementById('selfAccountSelect');
+
+    const accounts = [
+      { id:'123456789', name:'Savings' },
+      { id:'987654321', name:'Current' }
+    ];
+
+    select.innerHTML='';
+    accounts.filter(a=>a.id!==from).forEach(acc=>{
+      const opt=document.createElement('option');
+      opt.value=acc.id;
+      opt.text=`${acc.name} (${acc.id})`;
+      select.appendChild(opt);
+    });
+  }
+
+  function showDetails() {
+    document.getElementById('txnDetails').classList.remove('hidden');
+  }
+
+  function submitDispute() {
+    const reason = document.getElementById('disputeReason').value;
+    const table = document.getElementById('disputeTable');
+    table.innerHTML += `<tr><td>₹2,000</td><td>${reason}</td></tr>`;
+  }
+</script>
+
+</body>
+</html>

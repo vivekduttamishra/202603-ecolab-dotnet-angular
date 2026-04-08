@@ -1,0 +1,175 @@
+### Base URL
+@baseUrl = https://localhost:5001/api
+
+##################################################
+### AUTH
+##################################################
+
+### Login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@test.com",
+  "password": "123456"
+}
+
+### Register (Optional)
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@test.com",
+  "password": "123456"
+}
+
+##################################################
+### ACCOUNTS
+##################################################
+
+### Get all accounts for logged-in user
+GET {{baseUrl}}/accounts
+Authorization: Bearer {{token}}
+
+### Get account by ID
+GET {{baseUrl}}/accounts/{{accountId}}
+Authorization: Bearer {{token}}
+
+### Open new account (pending approval)
+POST {{baseUrl}}/accounts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "accountType": "Savings",
+  "initialDeposit": 1000
+}
+
+##################################################
+### TRANSACTIONS
+##################################################
+
+### Deposit
+POST {{baseUrl}}/transactions/deposit
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "toAccountId": "account-id",
+  "amount": 1000
+}
+
+### Withdraw
+POST {{baseUrl}}/transactions/withdraw
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "fromAccountId": "account-id",
+  "amount": 500
+}
+
+### Self Transfer
+POST {{baseUrl}}/transactions/self-transfer
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "fromAccountId": "account-id",
+  "toAccountId": "account-id",
+  "amount": 2000
+}
+
+### External Transfer
+POST {{baseUrl}}/transactions/transfer
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "fromAccountId": "account-id",
+  "toAccountNumber": "987654321",
+  "amount": 2000
+}
+
+### UPI Transfer
+POST {{baseUrl}}/transactions/upi
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "fromAccountId": "account-id",
+  "upiId": "user@upi",
+  "amount": 500
+}
+
+### Get transactions for account
+GET {{baseUrl}}/transactions?accountId={{accountId}}
+Authorization: Bearer {{token}}
+
+### Get transaction by ID
+GET {{baseUrl}}/transactions/{{transactionId}}
+Authorization: Bearer {{token}}
+
+##################################################
+### DISPUTES
+##################################################
+
+### Raise dispute
+POST {{baseUrl}}/transactions/{{transactionId}}/dispute
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "reason": "Incorrect transaction"
+}
+
+### Get my disputes
+GET {{baseUrl}}/disputes
+Authorization: Bearer {{token}}
+
+##################################################
+### MANAGER APIs
+##################################################
+
+### Get pending account approvals
+GET {{baseUrl}}/manager/accounts/pending
+Authorization: Bearer {{token}}
+
+### Approve account
+POST {{baseUrl}}/manager/accounts/{{accountId}}/approve
+Authorization: Bearer {{token}}
+
+### Reject account
+POST {{baseUrl}}/manager/accounts/{{accountId}}/reject
+Authorization: Bearer {{token}}
+
+### Get all disputes
+GET {{baseUrl}}/manager/disputes
+Authorization: Bearer {{token}}
+
+### Resolve dispute
+POST {{baseUrl}}/manager/disputes/{{disputeId}}/resolve
+Authorization: Bearer {{token}}
+
+### Reject dispute
+POST {{baseUrl}}/manager/disputes/{{disputeId}}/reject
+Authorization: Bearer {{token}}
+
+### Change interest rate
+PUT {{baseUrl}}/manager/accounts/interest-rate
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "accountType": "Savings",
+  "interestRate": 4.5
+}
+
+##################################################
+### AUTOMATION (Optional / Internal)
+##################################################
+
+### Run monthly interest (manual trigger for demo)
+POST {{baseUrl}}/internal/run-interest
+Authorization: Bearer {{token}}
