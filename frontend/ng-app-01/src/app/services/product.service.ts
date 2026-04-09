@@ -32,7 +32,7 @@ export class ProductService{
     ];
 
     async getAllProducts(){
-        await delay(3000) //simulated delay
+        await delay(300) //simulated delay
         return this.products;
     }
 

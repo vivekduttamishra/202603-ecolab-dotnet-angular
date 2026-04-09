@@ -18,9 +18,7 @@ import { NgIf } from "../../../node_modules/@angular/common/types/_common_module
     
         p{
             
-            margin-left:10px;
-            margin-right:10px;
-            margin-top:25%;
+            
         }
         .heart{
             cursor:pointer;
@@ -41,7 +39,7 @@ export class Likes{
 
 
     constructor(){
-        this.fakeLikes();
+        //this.fakeLikes();
     }
 
     handleLike(){

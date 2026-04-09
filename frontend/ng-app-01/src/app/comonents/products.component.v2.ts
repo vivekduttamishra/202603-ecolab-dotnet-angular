@@ -13,12 +13,10 @@ import { ChangeInfo, Range } from "./range.component";
         <div class='row' >
             <img [hidden]='fetched()' [style.width.px]='180' [style.height.px]='180'  src='/loader07.gif' />
         
-            <util-range [min]='1'  [max]='4' 
+            <util-range 
+                [value]='selectedOption()'  [min]='1'  [max]='4' 
                 
-
-                [(value)]='selectedOption'  
-
-                    
+                (change) = 'handleChange($event)'    
             >
 
             </util-range>
@@ -55,6 +53,14 @@ export class ProductList {
    
     selectedOption=signal(2)
     options=['', 'col-12','col-6', 'col-4', 'col-3']
+
+
+    handleChange(info:ChangeInfo){
+
+        //console.log('info',info);
+        this.selectedOption.set(info.updated)
+        
+    }
 
 
 

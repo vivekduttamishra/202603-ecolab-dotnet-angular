@@ -2,27 +2,29 @@ import { Component, signal } from "@angular/core";
 import { Product } from "../../data/product";
 import { Card } from "./cart.component";
 import { ProductService } from "../services/product.service";
-import { ChangeInfo, Range } from "./range.component";
 
 
 @Component({
-    selector: 'product-list',
+
+    selector: 'product-list-v1',
     template: `
         <h2>Our Products</h2>
 
         <div class='row' >
+
+
             <img [hidden]='fetched()' [style.width.px]='180' [style.height.px]='180'  src='/loader07.gif' />
-        
-            <util-range [min]='1'  [max]='4' 
-                
-
-                [(value)]='selectedOption'  
-
-                    
-            >
-
-            </util-range>
-        
+            <div class='range'>
+                <button class='btn'
+                    (click)="handleColumnChange(-1)"
+                    [disabled]="selectedOption()===1"
+                >⬇️</button>
+                {{selectedOption()}}
+                <button class='btn'
+                    (click)="handleColumnChange(1)"
+                    [disabled]="selectedOption()===4"
+                >⬆️</button>
+            </div>
             @for(product of products(); track product.id){
                 <div class="col {{options[selectedOption()]}}">
                 <utils-card
@@ -46,23 +48,24 @@ import { ChangeInfo, Range } from "./range.component";
        }
     
     `,
-    imports: [Card, Range]
+    imports: [Card]
 
 
 })
 export class ProductList {
 
-   
+    products = signal<Product[]>([]);
+    fetched=signal(false);
     selectedOption=signal(2)
     options=['', 'col-12','col-6', 'col-4', 'col-3']
 
-
-
+    handleColumnChange(delta:number){
+        let value = this.selectedOption()+delta;
+        if(value>=1 && value<=4)
+            this.selectedOption.set(value)
+    }
     
     //service=new ProductService();
-
-    products = signal<Product[]>([]);
-    fetched=signal(false);
     
     constructor(private service:ProductService){
         this.fetchProducts();
