@@ -37,16 +37,15 @@ namespace ConceptArchitect.Banking.EFRepository.Migrations
                     b.Property<double>("Balance")
                         .HasColumnType("float");
 
-                    b.Property<string>("OwnerEmail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("OwnerId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.HasKey("AccountNumber");
 
-                    b.HasIndex("OwnerEmail");
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Accounts");
 
@@ -57,13 +56,20 @@ namespace ConceptArchitect.Banking.EFRepository.Migrations
 
             modelBuilder.Entity("ConceptArchitect.Banking.Customer", b =>
                 {
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -83,7 +89,7 @@ namespace ConceptArchitect.Banking.EFRepository.Migrations
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Email");
+                    b.HasKey("Id");
 
                     b.ToTable("Customers");
                 });
@@ -119,7 +125,7 @@ namespace ConceptArchitect.Banking.EFRepository.Migrations
                 {
                     b.HasOne("ConceptArchitect.Banking.Customer", "Owner")
                         .WithMany("Accounts")
-                        .HasForeignKey("OwnerEmail")
+                        .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

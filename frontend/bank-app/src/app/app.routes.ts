@@ -7,6 +7,7 @@ import { NewCustomer } from './components/new-customer/new-customer';
 import { NotFound } from './components/utils/not-found';
 import { Customers } from './components/customers/customers';
 import { CustomerDetails } from './components/customer-details/customer-details';
+import { CustomerById } from './components/customer-by-id/customer-by-id';
 
 export const routes: Routes = [
 
@@ -41,8 +42,12 @@ export const routes: Routes = [
         component:Customers
     },
     {
-        path:"customers/:email",
+        path:"customers/details", // ?email=email  not added to route path
         component: CustomerDetails
+    },
+    {
+        path:"customers/:id", // ?email=email  not added to route path
+        component: CustomerById
     },
     {
         path:"**",

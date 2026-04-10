@@ -1,0 +1,22 @@
+
+@if(error()){
+    
+    @if(error()!.status===404){
+        <utils-not-found></utils-not-found>
+    }@else {
+
+        <h2 class="text text-danger">{{error()!.message}}</h2>
+    }
+
+
+
+} @else if(customer()!=null){
+    <h2><img [src]="customer()!.photo" [alt]="customer()!.name" />
+        Welcome {{customer()!.name}}</h2>
+    <h3>Email: {{customer()!.email}}</h3>
+    <p>Address: {{customer()!.address!}}</p>
+} @else {
+
+    <img src="/loader07.gif" />
+
+}

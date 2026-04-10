@@ -4,6 +4,7 @@ import { Observable, of, tap } from "rxjs"
 
 
 export interface Customer {
+    id:number,
     name: string,
     email: string,
     address: string,
@@ -18,6 +19,11 @@ const baseUrl = 'http://localhost:8000/api/customers'
 
 @Injectable({ providedIn: "root" })
 export class CustomerService {
+    login(email: string, password: string) {
+      return this.http
+                .post('http://localhost:8000/api/auth/login', { email, password })
+                .pipe()
+    }
 
     http = inject(HttpClient)
 
@@ -33,10 +39,18 @@ export class CustomerService {
     getCustomerByEmail(email: string) {
 
         return this.http
-            .get<Customer>(`${baseUrl}/${email}`)
+            .get<Customer>(`${baseUrl}/info?email=${email}`)
             .pipe()
 
 
+    }
+
+
+    getCustomerById(id:number) {
+
+        return this.http
+            .get<Customer>(`${baseUrl}/${id}`)
+            .pipe()    
     }
 
 

@@ -1,17 +1,20 @@
 import { Component, effect, inject, signal } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, Router  } from '@angular/router';
 import { Customer, CustomerService } from '../../services/customer.service';
 import { NotFound } from "../utils/not-found";
 import { HttpErrorResponse } from '@angular/common/http';
+import { CustomerInfo } from "../customer-info/customer-info";
 
 @Component({
   selector: 'app-customer-details',
-  imports: [NotFound],
-  templateUrl: './customer-details.html',
+  imports: [CustomerInfo],
+  template: `<app-customer-info [customer]='customer()' [error]='error()'>
+            </app-customer-info>`,
   styleUrl: './customer-details.css',
 })
 export class CustomerDetails {
 
+  router=inject(Router)
   route = inject(ActivatedRoute)
   service = inject(CustomerService)
   customer=signal<Customer|null>(null)
@@ -21,16 +24,21 @@ export class CustomerDetails {
 
   constructor() {
     effect(() => {
-      this.route.paramMap.subscribe({
-        next: (params) => {
-          this.fetchCustomer(params.get("email")!) //i know email will be passed
+      this.route.queryParamMap.subscribe({
+        next: (query) => {
+          var email = query.get("email")
+          if(!email)
+            return this.router.navigate(['/customers']);
+            
+          this.fetchCustomer(email) //i know email will be passed
+          return 
         }
       })
     })
   }
 
   fetchCustomer(email: string) {
-    //email=email.replace('-at-','@')
+    
     this
       .service
       .getCustomerByEmail(email)

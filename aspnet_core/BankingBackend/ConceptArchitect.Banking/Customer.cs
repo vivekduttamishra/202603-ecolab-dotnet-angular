@@ -11,9 +11,10 @@ namespace ConceptArchitect.Banking
 {
     public class Customer 
     {
+        [Key]
+        public int Id { get; set; }
         public string Name { get; set; }
         
-        [Key]
         [EmailAddress] //must be a valid email address
         public string Email { get; set; }  //email
 

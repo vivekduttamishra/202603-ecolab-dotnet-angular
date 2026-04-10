@@ -9,8 +9,8 @@ namespace ConceptArchitect.Banking
 {
     public  class CustomerService
     {
-        IRepository<Customer, string> repository;
-        public CustomerService(IRepository<Customer,string> repository)
+        IRepository<Customer, int> repository;
+        public CustomerService(IRepository<Customer,int> repository)
         {
             this.repository = repository;
         }
@@ -30,19 +30,25 @@ namespace ConceptArchitect.Banking
 
         public async Task<Customer> GetCustomerByEmail(string email)
         {
-            return await repository.GetById(email);
+            //return await repository.FindOne(c => c.Email == email);
+            var all = await repository.GetAll();
+            var customer= all.FirstOrDefault(c => c.Email == email);
+            if (customer != null)
+                return customer;
+            else
+                throw new InvalidIdException(email, $"Invalid Email : ${email}");
         }
 
-        public async Task ActivateCustomer(string email, bool isActive=true)
+        public async Task ActivateCustomer(int id, bool isActive=true)
         {
-            Customer customer = await repository.GetById(email);
+            Customer customer = await repository.GetById(id);
             customer.IsActive=isActive;
             await repository.Save();
         }
 
         public async Task<Customer> Login(string email, string password)
         {
-            Customer customer = await repository.GetById(email);
+            Customer customer = await repository.FindOne(c=>c.Email == email);
             if (customer.Password == password)
             {
                 return customer;
@@ -56,6 +62,11 @@ namespace ConceptArchitect.Banking
         {
             Customer customer = await Login(email, oldPassword);
             customer.Password = newPassword;
+        }
+
+        public async Task<Customer> GetCustomerById(int id)
+        {
+            return await repository.GetById(id);
         }
     }
 }

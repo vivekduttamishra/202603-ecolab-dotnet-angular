@@ -1,16 +1,31 @@
-@base_url = http://localhost:8000/api/customers
+@base_url = http://localhost:8000
+@customer_url= {{base_url}}/api/customers
 
+
+### 
+
+#Seed customers. call only when you don't have a customer
+POST {{base_url}}/admin/seed/customers
 
 ###
 # Get all customers
-GET {{base_url}}
+GET {{customer_url}}
 Origin: http://localhost:4200
 
 
 ###
 # Get customer by email
-GET {{base_url}}/vivek@conceptarchitect.in
+GET {{customer_url}}/info?email=seema@gmail.com
 
 ###
 # Get customer by invalid email
-GET {{base_url}}/noone@conceptarchitect.in
+GET {{customer_url}}/info?email=noone@conceptarchitect.in
+
+
+###
+# Get customer by id
+GET {{customer_url}}/1 
+
+###
+# Get customer by invalid id
+GET {{customer_url}}/1000 HTTP/1.1

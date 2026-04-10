@@ -21,9 +21,16 @@
                     </td>
                     <td>
                         <a class="btn btn-sm btn-primary"
-                            [routerLink]="['/customers', customer.email]"
+                            [routerLink]="['/customers', 'details']"
+                            [queryParams]="{'email': customer.email}"
                         
-                        >Details</a>
+                        >Email Lookup</a>
+                        
+                        <a class="btn btn-sm btn-primary"
+                            [routerLink]="['/customers', customer.id]"
+                            
+                        
+                        >Id Lookup</a>
                     </td>
                 </tr>
             }

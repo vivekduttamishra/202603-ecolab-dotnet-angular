@@ -37,9 +37,13 @@ namespace BankingApiServer
                 option.UseSqlServer(connectionString);
             });
 
-            builder.Services.AddScoped<IRepository<Customer, String>, EFCustomerRepository>();
+            builder.Services.AddScoped<IRepository<Customer, int>, EFCustomerRepository>();
             builder.Services.AddScoped<CustomerService>();
             builder.Services.AddSingleton<IApiKeyService, DummyApiKeyService>();
+
+            builder.Services.AddTransient<DataSeeder>();
+
+
             builder.Services.AddCors(config =>
             {
                 config.AddPolicy("AllowAll",
@@ -82,9 +86,16 @@ namespace BankingApiServer
             app.UseFileServer();
 
             Console.WriteLine("CORS SETUP");
+
+            app.MapPost("/admin/seed/customers",async (DataSeeder seeder) =>
+            {
+                return await seeder.CreateCustomers();
+
+            });
+
             app.MapControllers();
-            
-            
+
+            Console.WriteLine($"Server Started on {DateTime.Now.ToLongTimeString()} ");
             
             //app.UseCors(policy =>
             //{

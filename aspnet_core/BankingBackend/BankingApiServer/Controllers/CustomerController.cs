@@ -26,14 +26,26 @@ namespace BankingApiServer.Controllers
             return await service.GetAllCustomers();
         }
 
-        [HttpGet("{email}")] //base_url + "/email"
+        [HttpGet("info")] //base_url + "/email"
         //[ApiKeyRequired]
-        public async Task<Customer> GetCustomerById(string email)
+        public async Task<Customer> GetCustomerByEmail([FromQuery()] string email)
         {
 
-                var customer = await service.GetCustomerByEmail(email);
-                return customer; 
+            var customer = await service.GetCustomerByEmail(email);
+            return customer;
         }
+
+        [HttpGet("{id:int}")] //base_url + "/email"
+        //[ApiKeyRequired]
+        public async Task<Customer> GetCustomerById([FromRoute] int id)
+        {
+
+            var customer = await service.GetCustomerById(id);
+            return customer;
+        }
+
+
+      
 
         [HttpPost]
         public async Task<IActionResult> AddNewCustomer([FromBody] Customer customer)

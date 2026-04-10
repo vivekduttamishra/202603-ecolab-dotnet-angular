@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { Customer, CustomerService } from '../../services/customer.service';
-import { RouterLink } from '@angular/router';
+import { RouterLink  } from '@angular/router';
 import { EmailEncoderPipe } from '../../pipes/utils/email-encoder-pipe';
 
 @Component({

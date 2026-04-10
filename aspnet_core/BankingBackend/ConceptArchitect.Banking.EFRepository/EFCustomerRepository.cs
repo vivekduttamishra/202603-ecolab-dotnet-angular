@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConceptArchitect.Banking.EFRepository
 {
-    public class EFCustomerRepository : IRepository<Customer, String>
+    public class EFCustomerRepository : IRepository<Customer, int>
     {
         BankingContext context;
         public EFCustomerRepository(BankingContext context)
@@ -45,9 +45,9 @@ namespace ConceptArchitect.Banking.EFRepository
             return await context.Customers.ToListAsync();
         }
 
-        public async Task<Customer> GetById(string id)
+        public async Task<Customer> GetById(int id)
         {
-            var customer= await context.Customers.FirstOrDefaultAsync(c => c.Email == id);
+            var customer= await context.Customers.FirstOrDefaultAsync(c => c.Id == id);
             if (customer == null)
                 throw new InvalidIdException(id);
 
@@ -63,13 +63,13 @@ namespace ConceptArchitect.Banking.EFRepository
 
         public async Task<Customer> Update(Customer customer, Action<Customer, Customer> mergeOldNew)
         {
-            var oldCustomer = await GetById(customer.Email);
+            var oldCustomer = await GetById(customer.Id);
             mergeOldNew(oldCustomer, customer);
             await context.SaveChangesAsync();
             return oldCustomer;
         }
 
-        public async Task DeleteById(string id)
+        public async Task DeleteById(int id)
         {
             var customer = await GetById(id);
             context.Customers.Remove(customer);
