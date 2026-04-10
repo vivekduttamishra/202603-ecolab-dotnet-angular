@@ -27,7 +27,7 @@ namespace BankingApiServer.Controllers
         }
 
         [HttpGet("{email}")] //base_url + "/email"
-        [ApiKeyRequired]
+        //[ApiKeyRequired]
         public async Task<Customer> GetCustomerById(string email)
         {
 

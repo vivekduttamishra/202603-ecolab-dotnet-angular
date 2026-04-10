@@ -40,6 +40,17 @@ namespace BankingApiServer
             builder.Services.AddScoped<IRepository<Customer, String>, EFCustomerRepository>();
             builder.Services.AddScoped<CustomerService>();
             builder.Services.AddSingleton<IApiKeyService, DummyApiKeyService>();
+            builder.Services.AddCors(config =>
+            {
+                config.AddPolicy("AllowAll",
+                    policy =>
+                    {
+                        policy
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowAnyOrigin();
+                    });
+            });
 
             
             //builder.Services.AddOpenApi();
@@ -53,7 +64,6 @@ namespace BankingApiServer
             //    app.MapOpenApi();
             //}
 
-            app.UseHttpsRedirection();
 
             // app.UseExceptionHandler<InvalidIdException>(404, ex=>new
             // {
@@ -63,9 +73,31 @@ namespace BankingApiServer
 
             //app.UseAuthorization();
 
+
+            //app.UseHttpsRedirection();
+            app.UseRouting();
+            
+            app.UseCors("AllowAll");
+
             app.UseFileServer();
 
+            Console.WriteLine("CORS SETUP");
             app.MapControllers();
+            
+            
+            
+            //app.UseCors(policy =>
+            //{
+            //    policy.AllowAnyHeader();
+            //    policy.AllowAnyMethod();
+            //    policy.AllowAnyOrigin();
+            //});
+
+            //app.UseBefore(async context =>
+            //{
+            //    context.Response.Headers["Access-Control-Allow-Origin"] = "*";
+            //    context.Response.Headers["Access-Control-Allow-Methods"] = "*";
+            //});
         }
 
        

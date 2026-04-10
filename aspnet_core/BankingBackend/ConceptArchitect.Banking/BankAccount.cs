@@ -38,5 +38,7 @@ namespace ConceptArchitect.Banking
         {
             get {  return Balance; }
         }
+
+        //public object Transactions { get; internal set; }
     }
 }

@@ -1,0 +1,16 @@
+@base_url = http://localhost:8000/api/customers
+
+
+###
+# Get all customers
+GET {{base_url}}
+Origin: http://localhost:4200
+
+
+###
+# Get customer by email
+GET {{base_url}}/vivek@conceptarchitect.in
+
+###
+# Get customer by invalid email
+GET {{base_url}}/noone@conceptarchitect.in

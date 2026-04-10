@@ -1,0 +1,29 @@
+<h2>Our Products</h2>
+
+<strong>
+   Our Stock Price Today:  {{stockPrice|currency:'INR'}} 
+</strong>
+
+<div class='row'>
+
+   @if(products().length) {
+        <util-range [min]='1' [max]='4' [(value)]='selectedOption'>
+
+        </util-range>
+
+        @for(product of products(); track product.id){
+        <div class="col {{options[selectedOption()]}}">
+            <utils-card [title]='product.name |uppercase' [image]='product.coverImageUrl'
+                description={{product.description|trim:50}}></utils-card>
+        </div>
+        }
+   }
+   
+   @if(!fetched()) {       
+      <img [style.width.px]='180' [style.height.px]='180' src='/loader07.gif' />
+   }
+
+
+  
+
+</div>

@@ -1,0 +1,22 @@
+<h2>Our Products</h2>
+
+<div class='row'>
+    @if(!fetched()){
+
+    <img [style.width.px]='180' [style.height.px]='180' src='/loader07.gif' />
+    }@else {
+
+
+        <util-range [min]='1' [max]='4' [(value)]='selectedOption'>
+
+        </util-range>
+
+        @for(product of products(); track product.id){
+        <div class="col {{options[selectedOption()]}}">
+            <utils-card [title]='product.name' [image]='product.coverImageUrl'
+                description={{product.description}}></utils-card>
+        </div>
+        }
+    }
+
+</div>
